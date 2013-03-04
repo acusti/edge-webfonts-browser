@@ -1,0 +1,444 @@
+/* =====================
+ * Variables
+ * ===================== */
+/* Defaults */
+/* Import core compass framework http://compass-style.org/reference/compass/ */
+/* Custom variables (imports are first so custom variables can us them) */
+/* =====================
+ * Mixins
+ * ===================== */
+/* =====================
+ * Import partials
+ * ===================== */
+/* line 4, ../sass/_typography.sass */
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 7, ../sass/_typography.sass */
+body {
+  color: black;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-shadow: 0px 1px 1px white;
+}
+
+/* line 61, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+* html {
+  font-size: 100%;
+}
+
+/* line 64, ../../../../CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 16px;
+  line-height: 1.375em;
+}
+
+/* line 1, ../sass/_elements.sass */
+html {
+  background: -webkit-gradient(linear, to bottom, to top, color-stop(80px, #fbfbfb), color-stop(100%, #d4d4d4));
+  background: -webkit-linear-gradient(to bottom, #fbfbfb 80px, #d4d4d4 100%);
+  background: -moz-linear-gradient(to bottom, #fbfbfb 80px, #d4d4d4 100%);
+  background: -o-linear-gradient(to bottom, #fbfbfb 80px, #d4d4d4 100%);
+  background: linear-gradient(to bottom, #fbfbfb 80px, #d4d4d4 100%);
+  height: 100%;
+}
+
+/* line 5, ../sass/_elements.sass */
+body {
+  width: 95%;
+  margin: 1em auto;
+}
+
+/* line 9, ../sass/_elements.sass */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 12, ../sass/_elements.sass */
+.preload * {
+  font-size: 0;
+}
+
+/* line 11, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker {
+  position: relative;
+  width: 100%;
+  /*
+   *	Font filters logic (icon images and filtering of results)
+   */
+  /* Retina-ized icons for browser interface */
+  /* Retina-ized icons for browser interface */
+  /* Retina-ized icons for browser interface */
+  /* Retina-ized icons for browser interface */
+  /* Retina-ized icons for browser interface */
+  /* Retina-ized icons for browser interface */
+  /* Retina-ized icons for browser interface */
+  /* Retina-ized icons for browser interface */
+  /* Retina-ized icons for browser interface */
+  /* Retina-ized icons for browser interface */
+}
+/* line 15, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-side-bar {
+  position: absolute;
+  top: 42px;
+  left: 0;
+}
+/* line 20, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-search-fonts {
+  display: block;
+  width: 40%;
+  max-width: 392px;
+  min-width: 250px;
+  margin: 14px 0;
+  padding: 0 0 0 28px;
+  height: 28px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.48);
+  border: 1px solid #b4b6b5;
+  background-color: #dbddde;
+  font-size: 0.85em;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 35, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-search-fonts:focus {
+  background-color: white;
+}
+/* line 38, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker button {
+  padding: 0;
+}
+/* line 41, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker button:hover {
+  background: #dce1e4;
+  background-position: 0 -30px;
+}
+/* line 45, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker button.selected {
+  background: #bdbdbd;
+}
+/* line 48, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-button {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.48) inset;
+  border: 1px solid #b4b6b5;
+  background: #dbddde;
+  border-radius: 3px;
+  width: 32px;
+  height: 32px;
+}
+/* line 56, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-button:disabled {
+  background-position: -30px 0;
+}
+/* line 59, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 18px;
+}
+/* line 64, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker li {
+  list-style: none;
+  height: 30px;
+}
+/* line 68, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker li button {
+  border: 1px solid #b4b6b5;
+  background: #dbddde;
+  width: 32px;
+  height: 32px;
+}
+/* line 74, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker li button:hover {
+  background-color: #c8cbcd;
+}
+/* line 77, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker li button.selected {
+  background-color: #a6abad;
+}
+/* line 80, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker li button:active {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4) inset;
+}
+/* line 85, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker li button:disabled div, .edge-web-fonts #ewf-picker li button.disabled div {
+  background-position: -30px 0;
+}
+/* line 88, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker li button > * {
+  background-repeat: no-repeat;
+}
+/* line 91, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker li:first-child button {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.48) inset;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+/* line 96, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker li:last-child button {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+/* line 100, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-icon {
+  padding: 0;
+  margin: 0 auto;
+  height: 100%;
+}
+/* line 105, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-icon:disabled {
+  background-position: -30px 0;
+}
+/* line 108, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-results {
+  margin-left: 32px;
+  width: 97.5%;
+  height: 526px;
+  overflow-y: scroll;
+  font-size: 1%;
+}
+/* line 115, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-results .ewf-font {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  width: 111px;
+  height: 121px;
+  margin-left: 14px;
+  margin-bottom: 14px;
+  padding-top: 80px;
+  background-repeat: no-repeat;
+  border: 1px solid #b4b6b5;
+  background-color: white;
+  background-position: 50% -20px;
+  cursor: pointer;
+  font-size: 10000%;
+  overflow: hidden;
+  -webkit-transition-property: width;
+  -moz-transition-property: width;
+  -o-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+/* line 133, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-results .ewf-font:hover {
+  border: 1px solid #f18900;
+}
+/* line 136, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-results .ewf-font-details {
+  display: table;
+  height: 39px;
+  width: 100%;
+  padding: 0 6px;
+  background-color: #e5e8e7;
+  border-top: 1px solid #b4b6b5;
+  overflow: hidden;
+  cursor: pointer;
+}
+/* line 146, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-results .ewf-font-details label {
+  display: table-cell;
+  background-color: transparent;
+  vertical-align: middle;
+  font-size: 0.8125em;
+  text-shadow: 0 1px 0 white;
+  width: auto;
+  text-align: left;
+  line-height: 1.2;
+  padding: 0;
+  cursor: pointer;
+}
+/* line 159, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .wait {
+  top: 250px;
+  left: 300px;
+}
+/* line 164, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .ewf-search-fonts {
+  background-image: url('../img/fonts_search.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_search.png?1360714058') 1x, url('../img/fonts_search@2x.png?1360714058') 2x);
+  background-repeat: no-repeat;
+  background-position: 0 -1px;
+}
+/* line 175, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .serif {
+  background-image: url('../img/fonts_serif.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_serif.png?1360714058') 1x, url('../img/fonts_serif@2x.png?1360714058') 2x);
+}
+/* line 178, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 183, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-serif .ewf-font.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+/* line 175, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .sans-serif {
+  background-image: url('../img/fonts_sans-serif.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_sans-serif.png?1360714058') 1x, url('../img/fonts_sans-serif@2x.png?1360714058') 2x);
+}
+/* line 178, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 183, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-sans-serif .ewf-font.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+/* line 175, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .slab-serif {
+  background-image: url('../img/fonts_slab-serif.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_slab-serif.png?1360714058') 1x, url('../img/fonts_slab-serif@2x.png?1360714058') 2x);
+}
+/* line 178, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 183, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-slab-serif .ewf-font.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+/* line 175, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .script {
+  background-image: url('../img/fonts_script.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_script.png?1360714058') 1x, url('../img/fonts_script@2x.png?1360714058') 2x);
+}
+/* line 178, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 183, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-script .ewf-font.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+/* line 175, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .blackletter {
+  background-image: url('../img/fonts_blackletter.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_blackletter.png?1360714058') 1x, url('../img/fonts_blackletter@2x.png?1360714058') 2x);
+}
+/* line 178, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 183, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-blackletter .ewf-font.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+/* line 175, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .monospaced {
+  background-image: url('../img/fonts_monospaced.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_monospaced.png?1360714058') 1x, url('../img/fonts_monospaced@2x.png?1360714058') 2x);
+}
+/* line 178, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 183, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-monospaced .ewf-font.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+/* line 175, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .handmade {
+  background-image: url('../img/fonts_handmade.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_handmade.png?1360714058') 1x, url('../img/fonts_handmade@2x.png?1360714058') 2x);
+}
+/* line 178, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 183, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-handmade .ewf-font.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+/* line 175, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .decorative {
+  background-image: url('../img/fonts_decorative.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_decorative.png?1360714058') 1x, url('../img/fonts_decorative@2x.png?1360714058') 2x);
+}
+/* line 178, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 183, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-decorative .ewf-font.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+/* line 175, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .headings {
+  background-image: url('../img/fonts_headings.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_headings.png?1360714058') 1x, url('../img/fonts_headings@2x.png?1360714058') 2x);
+}
+/* line 178, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-headings .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 183, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-headings .ewf-font.headings {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+/* line 175, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .paragraphs {
+  background-image: url('../img/fonts_paragraphs.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_paragraphs.png?1360714058') 1x, url('../img/fonts_paragraphs@2x.png?1360714058') 2x);
+}
+/* line 178, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-paragraphs .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 183, ../sass/_classes.sass */
+.edge-web-fonts #ewf-picker .filter-paragraphs .ewf-font.paragraphs {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}

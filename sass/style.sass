@@ -1,0 +1,43 @@
+/* =====================
+ * Variables
+ * ===================== */
+
+/* Defaults */
+$default-text-shadow-h-offset: 0px
+$default-text-shadow-v-offset: 1px
+$inline-block-alignment: top
+$total-width: 95%
+
+/* Import core compass framework http://compass-style.org/reference/compass/ */
+@import "compass"
+
+/* Custom variables (imports are first so custom variables can us them) */
+$bckg-color: rgb(225, 225, 225)
+$grey-border-color: #b4b6b5
+$grey-border: 1px solid $grey-border-color
+$button-bckg-color: #dbddde
+
+/* =====================
+ * Mixins
+ * ===================== */
+@mixin dark-text($text-color: black, $text-shadow-color: transparent)
+	color: $text-color
+	-webkit-font-smoothing: subpixel-antialiased
+	+text-shadow($default-text-shadow-h-offset $default-text-shadow-v-offset $default-text-shadow-blur $text-shadow-color)
+
+@mixin light-text($text-color: white, $text-shadow-color: $default-text-shadow-color, $text-shadow-h-offset: $default-text-shadow-h-offset, $text-shadow-v-offset: $default-text-shadow-v-offset, $text-shadow-blur: $default-text-shadow-blur)
+	color: $text-color
+	-webkit-font-smoothing: antialiased
+	+text-shadow($text-shadow-h-offset $text-shadow-v-offset $text-shadow-blur $text-shadow-color)
+
+@mixin image-set($name, $extension)
+	background-image: image_url("#{$name}.#{$extension}")
+	background-image: -webkit-image-set(image_url("#{$name}.#{$extension}") 1x, image_url("#{$name}@2x.#{$extension}") 2x)
+
+
+/* =====================
+ * Import partials
+ * ===================== */
+@import "typography"
+@import "elements"
+@import "classes"
