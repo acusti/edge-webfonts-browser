@@ -27,7 +27,8 @@
 		fonts_by_class,
 		fonts_by_name,
 		fonts_by_slug,
-		i;
+		i,
+		search_timeout;
 
 	/**
 	 * Retrieve font metadata and set it up
@@ -162,6 +163,30 @@
 
 		$results.toggleClass('filter-' + filter);
 		$button.toggleClass('selected');
+	});
+	$('.ewf-search-fonts').on('keyup submit', function(evt) {
+		var $search = $(this),
+		    key = evt.keyCode,
+		    timeout_duration = 500;
+
+		// If the enter / return key was pressed
+		if (key && key === 13)
+			timeout_duration = 0;
+
+		if (search_timeout)
+			window.clearTimeout(search_timeout);
+
+		search_timeout = window.setTimeout(function() {
+			var name,
+			    search_string = $search.val().toLowerCase();
+			// Reset font matches
+			$('.non-match').removeClass('non-match');
+			// Identify non-matches
+			for (name in fonts_by_name) {
+				if (name.toLowerCase().indexOf(search_string) === -1)
+					$('#' + fonts_by_name[name].slug).addClass('non-match');
+			}
+		}, timeout_duration);
 	});
 	// for (i = 0; i < font_filters.length; i++) {
 	// }

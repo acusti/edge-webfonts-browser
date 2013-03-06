@@ -44,11 +44,11 @@
 			</div>
 			<div class="ewf-results">
 				{{#families}}
-				<div class="ewf-font 
+				<div id="{{slug}}" class="ewf-font
 					{{#classifications}}{{.}} {{/classifications}}
 					{{#variations}}{{fvd}} {{/variations}}
 					{{#recommended_for}}{{.}} {{/recommended_for}}
-					" data-slug="{{slug}}" style="background-image: url({{thumbnails.edge}})">
+					" style="background-image: url({{thumbnails.edge}})">
 					<div class="ewf-font-details">
 						<label>{{name}}</label>
 					</div>
