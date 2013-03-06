@@ -1,5 +1,5 @@
 $base-font-size: 16px
-$base-line-height: 22px
+$base-line-height: 20px
 
 html
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -8,3 +8,19 @@ body
 	+dark-text(black, white)
 
 +establish-baseline
+// +debug-vertical-alignment
+
+h1
+	+adjust-font-size-to(32px)
+	
+h2
+	+adjust-font-size-to(28px)
+
+	header > &
+		font-weight: 400
+
+header > *
+	+text-shadow(0 1px lighten($accent-color, 30%))
+
+#page-font-notice
+	+adjust-font-size-to(14px)

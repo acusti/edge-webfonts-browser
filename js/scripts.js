@@ -2,10 +2,11 @@
 	var api_url_prefix     = 'https://api.typekit.com/edge_internal_v1/',
 		font_include_url_prefix = '//use.edgefonts.net/',
 		font_include_url_suffix = '.js',
-		d        = $.Deferred(),
-		$picker  = $('#ewf-picker'),
-		$sidebar = $picker.find('.ewf-side-bar'),
-		$results = $picker.find('.ewf-results'),
+		d                    = $.Deferred(),
+		$picker              = $('#ewf-picker'),
+		$sidebar             = $picker.find('.ewf-side-bar'),
+		$results             = $picker.find('.ewf-results'),
+		$page_font_name      = $('#page-font-notice').find('.current-font-name'),
 		font_classifications = [
 			{ class_name: "serif",	   localized_name: "Serif" },
 			{ class_name: "sans-serif",  localized_name: "Sans-Serif" },
@@ -121,8 +122,8 @@
 				font_idx += font_idx_mod;
 			} while (f.variations.length < 2 || (f.classifications[0] !== 'sans-serif' && f.classifications[0] !== 'serif'));
 			// Following logic chooses a randow 'headings' font:
-			font_idx = Math.round(Math.random() * fonts_by_class['headings'].length);
-			console.log(fonts_by_class['headings'][font_idx]);
+			// font_idx = Math.round(Math.random() * fonts_by_class['headings'].length);
+			// f = fonts_by_class['headings'][font_idx];
 			// To create full script element for including a font (also works with more than one font):
 			// if (f) {
 			// 	for (i = 0; i < f.variations.length; i++) {
@@ -133,11 +134,12 @@
 			// if (font_includes.length) {
 			// 	$picker.prepend(createInclude(font_includes));
 			// }
+			$page_font_name.html(f.name);
 			$.getScript(font_include_url_prefix + f.slug + font_include_url_suffix, function() {
 				var $html = $('html').css('fontFamily', f.slug);
 				window.setTimeout(function() {
 					$html.removeClass('preload');
-				}, 150);
+				}, 350);
 			});
 			d.resolve();
 		},
