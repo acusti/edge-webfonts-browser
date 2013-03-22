@@ -360,10 +360,10 @@ li button > * {
 }
 /* line 162, ../sass/_ui.sass */
 .ewf-top-bar li button {
-  font-size: 20px;
+  font-size: 22px;
   color: #414242;
   font-family: inherit;
-  line-height: 32px;
+  line-height: 34px;
 }
 /* line 168, ../sass/_ui.sass */
 .ewf-top-bar li button .italics {
