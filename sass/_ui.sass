@@ -42,6 +42,16 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 	+transition-property(bottom)
 	+transition-duration(0.2s)
 	
+	@media (max-width: $narrow-breakpoint)
+		width: 100%
+		padding: 0 0.5em
+		left: 0
+		line-height: 1.2
+
+		p,
+		code
+			margin: 0.5em 0
+
 	&.active
 		height: auto
 		bottom: 0
@@ -123,6 +133,7 @@ ul
 	
 	.ewf-top-bar &.font-weights
 		margin-left: $button-width + $font-spacing + 2
+		white-space: nowrap
 
 	.ewf-top-bar &.font-italics
 		display: none
