@@ -214,6 +214,15 @@ li:last-child button
 	+overflow-scroll
 	font-size: 1%
 
+	@media (min-height: 880px)
+		height: $font-height * 5 + $font-spacing * 4 + 4
+
+	@media (max-height: 740px)
+		height: $font-height * 3 + $font-spacing * 2 + 4
+
+	@media (max-height: 610px)
+		height: $font-height * 2 + $font-spacing * 1 + 4
+
 	.ewf-font
 		+inline-block
 		width: $font-width

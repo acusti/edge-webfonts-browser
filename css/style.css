@@ -455,6 +455,24 @@ li button > * {
   font-size: 1%;
 }
 /* line 217, ../sass/_ui.sass */
+@media (min-height: 880px) {
+  /* line 213, ../sass/_ui.sass */
+  .ewf-results {
+    height: 665px;
+  }
+}
+@media (max-height: 740px) {
+  /* line 213, ../sass/_ui.sass */
+  .ewf-results {
+    height: 395px;
+  }
+}
+@media (max-height: 610px) {
+  /* line 213, ../sass/_ui.sass */
+  .ewf-results {
+    height: 260px;
+  }
+}
 .ewf-results .ewf-font {
   display: -moz-inline-stack;
   display: inline-block;
