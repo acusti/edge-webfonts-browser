@@ -12,15 +12,31 @@ body
 
 h1
 	+adjust-font-size-to(32px)
+
+	@media (max-width: $narrow-breakpoint)
+		font-size: 24px
+		line-height: 1.5
 	
 h2
 	+adjust-font-size-to(28px)
 
+	@media (max-width: $narrow-breakpoint)
+		font-size: 18px
+		line-height: 1.5
+
 	header > &
-		font-weight: 400
+		font-weight: 300
 
 header > *
 	+text-shadow(0 1px lighten($accent-color, 30%))
 
-#page-font-notice
+.note
 	+adjust-font-size-to(14px)
+
+#type-tester
+	font-size: 32px
+	line-height: 1.2
+
+	@media (max-width: $mid-breakpoint)
+		font-size: 24px
+		line-height: 1.1

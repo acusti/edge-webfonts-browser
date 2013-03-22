@@ -38,57 +38,87 @@ h1 {
   font-size: 2em;
   line-height: 1.25em;
 }
+@media (max-width: 600px) {
+  /* line 13, ../sass/_typography.sass */
+  h1 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}
 
-/* line 16, ../sass/_typography.sass */
+/* line 20, ../sass/_typography.sass */
 h2 {
   font-size: 1.75em;
   line-height: 1.42857em;
 }
-/* line 19, ../sass/_typography.sass */
+@media (max-width: 600px) {
+  /* line 20, ../sass/_typography.sass */
+  h2 {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+/* line 27, ../sass/_typography.sass */
 header > h2 {
-  font-weight: 400;
+  font-weight: 300;
 }
 
-/* line 22, ../sass/_typography.sass */
+/* line 30, ../sass/_typography.sass */
 header > * {
   text-shadow: 0 1px #ffe098;
 }
 
-/* line 25, ../sass/_typography.sass */
-#page-font-notice {
+/* line 33, ../sass/_typography.sass */
+.note {
   font-size: 0.875em;
   line-height: 1.42857em;
 }
 
+/* line 36, ../sass/_typography.sass */
+#type-tester {
+  font-size: 32px;
+  line-height: 1.2;
+}
+@media (max-width: 780px) {
+  /* line 36, ../sass/_typography.sass */
+  #type-tester {
+    font-size: 24px;
+    line-height: 1.1;
+  }
+}
+
 /* line 1, ../sass/_elements.sass */
 html {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(120px, #ffffff), color-stop(100%, #d4d4d4));
-  background: -webkit-linear-gradient(top, #ffffff 120px, #d4d4d4 100%);
-  background: -moz-linear-gradient(top, #ffffff 120px, #d4d4d4 100%);
-  background: -o-linear-gradient(top, #ffffff 120px, #d4d4d4 100%);
-  background: linear-gradient(top, #ffffff 120px, #d4d4d4 100%);
+  background-color: #d4d4d4;
+  background-repeat: repeat-x;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(45%, #ffffff), color-stop(100%, #d4d4d4));
+  background-image: -webkit-linear-gradient(top, #ffffff 45%, #d4d4d4 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 45%, #d4d4d4 100%);
+  background-image: -o-linear-gradient(top, #ffffff 45%, #d4d4d4 100%);
+  background-image: linear-gradient(top, #ffffff 45%, #d4d4d4 100%);
   height: 100%;
 }
 
-/* line 5, ../sass/_elements.sass */
+/* line 7, ../sass/_elements.sass */
 body {
   width: 100%;
   margin: 0;
 }
 
-/* line 9, ../sass/_elements.sass */
+/* line 11, ../sass/_elements.sass */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 12, ../sass/_elements.sass */
+/* line 14, ../sass/_elements.sass */
 .preload * {
   font-size: 0;
 }
 
-/* line 15, ../sass/_elements.sass */
+/* line 17, ../sass/_elements.sass */
 header {
+  min-height: 60px;
   background-color: #feb200;
   background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 50%, transparent 50%), -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 50%, transparent 50%), -webkit-linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.12) 50%), -webkit-linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.16) 50%);
   background-image: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.06) 50%, transparent 50%), -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 50%, transparent 50%), -moz-linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.12) 50%), -moz-linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.16) 50%);
@@ -104,54 +134,123 @@ header {
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px;
 }
-/* line 41, ../sass/_elements.sass */
+/* line 44, ../sass/_elements.sass */
 header > * {
   width: 95%;
   margin: 0 auto;
 }
 
-/* line 19, ../sass/_ui.sass */
+/* line 48, ../sass/_elements.sass */
+code {
+  display: block;
+  padding: 4px;
+  margin: 1em 0;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/* line 54, ../sass/_elements.sass */
+p code {
+  display: inline;
+  white-space: nowrap;
+}
+
+/* line 25, ../sass/_ui.sass */
 #page-font-notice {
   position: absolute;
   z-index: 1;
   top: 0;
   right: 5%;
   padding: 0.5em 1em;
-  background: rgba(255, 232, 178, 0.75);
+  background: rgba(255, 227, 162, 0.75);
 }
 
-/* line 27, ../sass/_ui.sass */
+/* line 33, ../sass/_ui.sass */
+#font-embed-code {
+  position: absolute;
+  height: 0;
+  bottom: -60px;
+  left: 15%;
+  width: 70%;
+  padding: 0 1em;
+  overflow: hidden;
+  background: rgba(255, 227, 162, 0.9);
+  -webkit-transition-property: bottom;
+  -moz-transition-property: bottom;
+  -o-transition-property: bottom;
+  transition-property: bottom;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* line 45, ../sass/_ui.sass */
+#font-embed-code.active {
+  height: auto;
+  bottom: 0;
+}
+
+/* line 49, ../sass/_ui.sass */
+#type-tester {
+  display: block;
+  width: 50%;
+  float: right;
+  height: 0;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  -webkit-transition-property: height;
+  -moz-transition-property: height;
+  -o-transition-property: height;
+  transition-property: height;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  background-color: #ffe3a2;
+}
+@media (max-width: 780px) {
+  /* line 49, ../sass/_ui.sass */
+  #type-tester {
+    width: 45%;
+  }
+}
+@media (max-width: 680px) {
+  /* line 49, ../sass/_ui.sass */
+  #type-tester {
+    width: 40%;
+  }
+}
+@media (max-width: 600px) {
+  /* line 67, ../sass/_ui.sass */
+  .ewf-toolbars #type-tester {
+    width: 95%;
+    float: none;
+    height: 66px;
+    box-shadow: 0 0 0 4px white, 0 0 0 5px #b4b6b5;
+    margin: 5px 0 0 5px;
+  }
+}
+/* line 75, ../sass/_ui.sass */
+#type-tester.active {
+  height: 66px;
+  padding: 0.2em 0.3em;
+  margin-right: 6px;
+  box-shadow: 0 0 0 5px white, 0 0 0 6px #b4b6b5;
+}
+
+/* line 81, ../sass/_ui.sass */
 .edge-web-fonts {
   width: 95%;
   margin: 0 auto 1em;
 }
 
-/* line 31, ../sass/_ui.sass */
+/* line 85, ../sass/_ui.sass */
 #ewf-picker {
   position: relative;
   width: 100%;
-  /*
-   *	Font filters logic (icon images and filtering of results)
-   */
-  /* Retina-ized icons for browser interface */
-  /* Retina-ized icons for browser interface */
-  /* Retina-ized icons for browser interface */
-  /* Retina-ized icons for browser interface */
-  /* Retina-ized icons for browser interface */
-  /* Retina-ized icons for browser interface */
-  /* Retina-ized icons for browser interface */
-  /* Retina-ized icons for browser interface */
-  /* Retina-ized icons for browser interface */
-  /* Retina-ized icons for browser interface */
 }
-/* line 35, ../sass/_ui.sass */
-#ewf-picker .ewf-side-bar {
-  position: absolute;
-  top: 42px;
-  left: 0;
-}
-/* line 40, ../sass/_ui.sass */
-#ewf-picker .ewf-search-fonts {
+
+/* line 89, ../sass/_ui.sass */
+.ewf-search-fonts {
   display: block;
   width: 40%;
   max-width: 392px;
@@ -172,106 +271,191 @@ header > * {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
 }
-/* line 55, ../sass/_ui.sass */
-#ewf-picker .ewf-search-fonts:focus {
+/* line 104, ../sass/_ui.sass */
+.ewf-search-fonts:focus {
   background-color: white;
 }
-/* line 58, ../sass/_ui.sass */
-#ewf-picker button {
-  padding: 0;
+
+/* line 107, ../sass/_ui.sass */
+.ewf-side-bar {
+  position: absolute;
+  top: 42px;
+  left: 0;
 }
-/* line 61, ../sass/_ui.sass */
-#ewf-picker button:hover {
-  background: #dce1e4;
-  background-position: 0 -30px;
+@media (max-width: 600px) {
+  /* line 107, ../sass/_ui.sass */
+  .ewf-side-bar {
+    top: 122px;
+  }
 }
-/* line 65, ../sass/_ui.sass */
-#ewf-picker button.selected {
-  background: #bdbdbd;
-}
-/* line 68, ../sass/_ui.sass */
-#ewf-picker .ewf-button {
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.48) inset;
-  border: 1px solid #b4b6b5;
-  background: #dbddde;
-  border-radius: 3px;
-  width: 32px;
-  height: 32px;
-}
-/* line 76, ../sass/_ui.sass */
-#ewf-picker .ewf-button:disabled {
-  background-position: -30px 0;
-}
-/* line 79, ../sass/_ui.sass */
-#ewf-picker ul {
+
+/* line 115, ../sass/_ui.sass */
+ul {
   padding: 0;
   margin: 0;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
-/* line 84, ../sass/_ui.sass */
-#ewf-picker li {
+/* line 120, ../sass/_ui.sass */
+.ewf-top-bar ul {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin-right: 14px;
+}
+/* line 124, ../sass/_ui.sass */
+.ewf-top-bar ul.font-weights {
+  margin-left: 46px;
+}
+/* line 127, ../sass/_ui.sass */
+.ewf-top-bar ul.font-italics {
+  display: none;
+}
+
+/* line 130, ../sass/_ui.sass */
+li {
   list-style: none;
   height: 30px;
 }
-/* line 88, ../sass/_ui.sass */
-#ewf-picker li button {
+/* line 134, ../sass/_ui.sass */
+.ewf-top-bar li {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  margin: 0 -5px 0 0;
+}
+
+/* line 138, ../sass/_ui.sass */
+li button {
   border: 1px solid #b4b6b5;
   background: #dbddde;
   width: 32px;
   height: 32px;
+  padding: 0;
 }
-/* line 94, ../sass/_ui.sass */
-#ewf-picker li button:hover {
+/* line 145, ../sass/_ui.sass */
+li button:hover {
   background-color: #c8cbcd;
 }
-/* line 97, ../sass/_ui.sass */
-#ewf-picker li button.selected {
+/* line 148, ../sass/_ui.sass */
+li button.selected {
   background-color: #a6abad;
 }
-/* line 100, ../sass/_ui.sass */
-#ewf-picker li button:active {
+/* line 151, ../sass/_ui.sass */
+li button:active {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4) inset;
 }
-/* line 105, ../sass/_ui.sass */
-#ewf-picker li button:disabled div, #ewf-picker li button.disabled div {
+/* line 156, ../sass/_ui.sass */
+li button:disabled div, li button.disabled div {
   background-position: -30px 0;
 }
-/* line 108, ../sass/_ui.sass */
-#ewf-picker li button > * {
+/* line 159, ../sass/_ui.sass */
+li button > * {
   background-repeat: no-repeat;
 }
-/* line 111, ../sass/_ui.sass */
-#ewf-picker li:first-child button {
+/* line 162, ../sass/_ui.sass */
+.ewf-top-bar li button {
+  font-size: 20px;
+  color: #414242;
+  font-family: inherit;
+  line-height: 32px;
+}
+/* line 168, ../sass/_ui.sass */
+.ewf-top-bar li button .italics {
+  font-style: italic;
+}
+/* line 174, ../sass/_ui.sass */
+.ewf-top-bar li button .n1 {
+  font-weight: 100;
+}
+/* line 174, ../sass/_ui.sass */
+.ewf-top-bar li button .n2 {
+  font-weight: 200;
+}
+/* line 174, ../sass/_ui.sass */
+.ewf-top-bar li button .n3 {
+  font-weight: 300;
+}
+/* line 174, ../sass/_ui.sass */
+.ewf-top-bar li button .n4 {
+  font-weight: 400;
+}
+/* line 174, ../sass/_ui.sass */
+.ewf-top-bar li button .n5 {
+  font-weight: 500;
+}
+/* line 174, ../sass/_ui.sass */
+.ewf-top-bar li button .n6 {
+  font-weight: 600;
+}
+/* line 174, ../sass/_ui.sass */
+.ewf-top-bar li button .n7 {
+  font-weight: 700;
+}
+/* line 174, ../sass/_ui.sass */
+.ewf-top-bar li button .n8 {
+  font-weight: 800;
+}
+/* line 174, ../sass/_ui.sass */
+.ewf-top-bar li button .n9 {
+  font-weight: 900;
+}
+
+/* line 179, ../sass/_ui.sass */
+.ewf-side-bar li:first-child button {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.48) inset;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-/* line 116, ../sass/_ui.sass */
-#ewf-picker li:last-child button {
+/* line 184, ../sass/_ui.sass */
+.ewf-top-bar li:first-child button {
+  box-shadow: 1px 0px 0 rgba(255, 255, 255, 0.48) inset;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/* line 191, ../sass/_ui.sass */
+.ewf-side-bar li:last-child button {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-/* line 120, ../sass/_ui.sass */
-#ewf-picker .ewf-icon {
+/* line 195, ../sass/_ui.sass */
+.ewf-top-bar li:last-child button {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+/* line 199, ../sass/_ui.sass */
+.ewf-icon {
   padding: 0;
   margin: 0 auto;
   height: 100%;
 }
-/* line 125, ../sass/_ui.sass */
-#ewf-picker .ewf-icon:disabled {
+
+/* line 204, ../sass/_ui.sass */
+.ewf-icon:disabled {
   background-position: -30px 0;
 }
-/* line 128, ../sass/_ui.sass */
-#ewf-picker .ewf-results {
+
+/* line 207, ../sass/_ui.sass */
+.ewf-results {
   margin-left: 32px;
   width: 97.5%;
-  height: 526px;
+  height: 530px;
+  /* Add top padding for active font style and remove extra padding with negative margin (still need to compensate in height above for padding, however) */
+  padding-top: 4px;
+  margin-top: -4px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   font-size: 1%;
 }
-/* line 135, ../sass/_ui.sass */
-#ewf-picker .ewf-results .ewf-font {
+/* line 217, ../sass/_ui.sass */
+.ewf-results .ewf-font {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: top;
@@ -290,30 +474,37 @@ header > * {
   cursor: pointer;
   font-size: 10000%;
   overflow: hidden;
-  -webkit-transition-property: width;
-  -moz-transition-property: width;
-  -o-transition-property: width;
-  transition-property: width;
+  -webkit-transition-property: padding;
+  -moz-transition-property: padding;
+  -o-transition-property: padding;
+  transition-property: padding;
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-/* line 153, ../sass/_ui.sass */
-#ewf-picker .ewf-results .ewf-font:hover {
+/* line 235, ../sass/_ui.sass */
+.ewf-results .ewf-font:hover {
   border-color: #feb200;
   -webkit-box-shadow: 0 0 3px #feb200;
   -moz-box-shadow: 0 0 3px #feb200;
   box-shadow: 0 0 3px #feb200;
 }
-/* line 157, ../sass/_ui.sass */
+/* line 239, ../sass/_ui.sass */
+.ewf-results .ewf-font.active {
+  border-color: #00b900;
+  -webkit-box-shadow: 0 0 5px #00b900;
+  -moz-box-shadow: 0 0 5px #00b900;
+  box-shadow: 0 0 5px #00b900;
+}
+/* line 245, ../sass/_ui.sass */
 #ewf-picker .ewf-results .ewf-font.non-match {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 160, ../sass/_ui.sass */
-#ewf-picker .ewf-results .ewf-font-details {
+/* line 248, ../sass/_ui.sass */
+.ewf-results .ewf-font-details {
   display: table;
   height: 39px;
   width: 100%;
@@ -323,8 +514,8 @@ header > * {
   overflow: hidden;
   cursor: pointer;
 }
-/* line 170, ../sass/_ui.sass */
-#ewf-picker .ewf-results .ewf-font-details label {
+/* line 258, ../sass/_ui.sass */
+.ewf-results .ewf-font-details label {
   display: table-cell;
   background-color: transparent;
   vertical-align: middle;
@@ -336,1264 +527,563 @@ header > * {
   padding: 0;
   cursor: pointer;
 }
-/* line 183, ../sass/_ui.sass */
-#ewf-picker .wait {
+
+/* line 271, ../sass/_ui.sass */
+.wait {
   top: 250px;
   left: 300px;
 }
-/* line 188, ../sass/_ui.sass */
-#ewf-picker .ewf-search-fonts {
+
+/* line 276, ../sass/_ui.sass */
+.ewf-search-fonts {
   background-image: url('../img/fonts_search.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_search.png?1360714058') 1x, url('../img/fonts_search@2x.png?1360714058') 2x);
   background-repeat: no-repeat;
   background-position: 0 -1px;
 }
-/* line 199, ../sass/_ui.sass */
-#ewf-picker .serif {
-  background-image: url('../img/fonts_serif.png?1360714058');
-  background-image: -webkit-image-set(url('../img/fonts_serif.png?1360714058') 1x, url('../img/fonts_serif@2x.png?1360714058') 2x);
-}
-/* line 202, ../sass/_ui.sass */
-#ewf-picker .filter-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 205, ../sass/_ui.sass */
-#ewf-picker .filter-serif .ewf-font.serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-sans-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-sans-serif .ewf-font.serif.sans-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-slab-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-slab-serif .ewf-font.serif.slab-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-script .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-script .ewf-font.serif.script {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-blackletter .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-blackletter .ewf-font.serif.blackletter {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-monospaced .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-monospaced .ewf-font.serif.monospaced {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-handmade .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-handmade .ewf-font.serif.handmade {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-decorative .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-decorative .ewf-font.serif.decorative {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-headings .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-headings .ewf-font.serif.headings {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-paragraphs .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-serif.filter-paragraphs .ewf-font.serif.paragraphs {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 199, ../sass/_ui.sass */
-#ewf-picker .sans-serif {
-  background-image: url('../img/fonts_sans-serif.png?1360714058');
-  background-image: -webkit-image-set(url('../img/fonts_sans-serif.png?1360714058') 1x, url('../img/fonts_sans-serif@2x.png?1360714058') 2x);
-}
-/* line 202, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 205, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif .ewf-font.sans-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-serif .ewf-font.sans-serif.serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-slab-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-slab-serif .ewf-font.sans-serif.slab-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-script .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-script .ewf-font.sans-serif.script {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-blackletter .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-blackletter .ewf-font.sans-serif.blackletter {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-monospaced .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-monospaced .ewf-font.sans-serif.monospaced {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-handmade .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-handmade .ewf-font.sans-serif.handmade {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-decorative .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-decorative .ewf-font.sans-serif.decorative {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-headings .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-headings .ewf-font.sans-serif.headings {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-paragraphs .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-sans-serif.filter-paragraphs .ewf-font.sans-serif.paragraphs {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 199, ../sass/_ui.sass */
-#ewf-picker .slab-serif {
-  background-image: url('../img/fonts_slab-serif.png?1360714058');
-  background-image: -webkit-image-set(url('../img/fonts_slab-serif.png?1360714058') 1x, url('../img/fonts_slab-serif@2x.png?1360714058') 2x);
-}
-/* line 202, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 205, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif .ewf-font.slab-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-serif .ewf-font.slab-serif.serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-sans-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-sans-serif .ewf-font.slab-serif.sans-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-script .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-script .ewf-font.slab-serif.script {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-blackletter .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-blackletter .ewf-font.slab-serif.blackletter {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-monospaced .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-monospaced .ewf-font.slab-serif.monospaced {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-handmade .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-handmade .ewf-font.slab-serif.handmade {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-decorative .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-decorative .ewf-font.slab-serif.decorative {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-headings .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-headings .ewf-font.slab-serif.headings {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-paragraphs .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-slab-serif.filter-paragraphs .ewf-font.slab-serif.paragraphs {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 199, ../sass/_ui.sass */
-#ewf-picker .script {
-  background-image: url('../img/fonts_script.png?1360714058');
-  background-image: -webkit-image-set(url('../img/fonts_script.png?1360714058') 1x, url('../img/fonts_script@2x.png?1360714058') 2x);
-}
-/* line 202, ../sass/_ui.sass */
-#ewf-picker .filter-script .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 205, ../sass/_ui.sass */
-#ewf-picker .filter-script .ewf-font.script {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-serif .ewf-font.script.serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-sans-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-sans-serif .ewf-font.script.sans-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-slab-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-slab-serif .ewf-font.script.slab-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-blackletter .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-blackletter .ewf-font.script.blackletter {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-monospaced .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-monospaced .ewf-font.script.monospaced {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-handmade .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-handmade .ewf-font.script.handmade {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-decorative .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-decorative .ewf-font.script.decorative {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-headings .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-headings .ewf-font.script.headings {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-paragraphs .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-script.filter-paragraphs .ewf-font.script.paragraphs {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 199, ../sass/_ui.sass */
-#ewf-picker .blackletter {
-  background-image: url('../img/fonts_blackletter.png?1360714058');
-  background-image: -webkit-image-set(url('../img/fonts_blackletter.png?1360714058') 1x, url('../img/fonts_blackletter@2x.png?1360714058') 2x);
-}
-/* line 202, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 205, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter .ewf-font.blackletter {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-serif .ewf-font.blackletter.serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-sans-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-sans-serif .ewf-font.blackletter.sans-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-slab-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-slab-serif .ewf-font.blackletter.slab-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-script .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-script .ewf-font.blackletter.script {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-monospaced .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-monospaced .ewf-font.blackletter.monospaced {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-handmade .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-handmade .ewf-font.blackletter.handmade {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-decorative .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-decorative .ewf-font.blackletter.decorative {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-headings .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-headings .ewf-font.blackletter.headings {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-paragraphs .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-blackletter.filter-paragraphs .ewf-font.blackletter.paragraphs {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 199, ../sass/_ui.sass */
-#ewf-picker .monospaced {
-  background-image: url('../img/fonts_monospaced.png?1360714058');
-  background-image: -webkit-image-set(url('../img/fonts_monospaced.png?1360714058') 1x, url('../img/fonts_monospaced@2x.png?1360714058') 2x);
-}
-/* line 202, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 205, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced .ewf-font.monospaced {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-serif .ewf-font.monospaced.serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-sans-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-sans-serif .ewf-font.monospaced.sans-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-slab-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-slab-serif .ewf-font.monospaced.slab-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-script .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-script .ewf-font.monospaced.script {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-blackletter .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-blackletter .ewf-font.monospaced.blackletter {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-handmade .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-handmade .ewf-font.monospaced.handmade {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-decorative .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-decorative .ewf-font.monospaced.decorative {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-headings .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-headings .ewf-font.monospaced.headings {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-paragraphs .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-monospaced.filter-paragraphs .ewf-font.monospaced.paragraphs {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 199, ../sass/_ui.sass */
-#ewf-picker .handmade {
-  background-image: url('../img/fonts_handmade.png?1360714058');
-  background-image: -webkit-image-set(url('../img/fonts_handmade.png?1360714058') 1x, url('../img/fonts_handmade@2x.png?1360714058') 2x);
-}
-/* line 202, ../sass/_ui.sass */
-#ewf-picker .filter-handmade .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 205, ../sass/_ui.sass */
-#ewf-picker .filter-handmade .ewf-font.handmade {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-serif .ewf-font.handmade.serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-sans-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-sans-serif .ewf-font.handmade.sans-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-slab-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-slab-serif .ewf-font.handmade.slab-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-script .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-script .ewf-font.handmade.script {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-blackletter .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-blackletter .ewf-font.handmade.blackletter {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-monospaced .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-monospaced .ewf-font.handmade.monospaced {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-decorative .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-decorative .ewf-font.handmade.decorative {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-headings .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-headings .ewf-font.handmade.headings {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-paragraphs .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-handmade.filter-paragraphs .ewf-font.handmade.paragraphs {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 199, ../sass/_ui.sass */
-#ewf-picker .decorative {
-  background-image: url('../img/fonts_decorative.png?1360714058');
-  background-image: -webkit-image-set(url('../img/fonts_decorative.png?1360714058') 1x, url('../img/fonts_decorative@2x.png?1360714058') 2x);
-}
-/* line 202, ../sass/_ui.sass */
-#ewf-picker .filter-decorative .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 205, ../sass/_ui.sass */
-#ewf-picker .filter-decorative .ewf-font.decorative {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-serif .ewf-font.decorative.serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-sans-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-sans-serif .ewf-font.decorative.sans-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-slab-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-slab-serif .ewf-font.decorative.slab-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-script .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-script .ewf-font.decorative.script {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-blackletter .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-blackletter .ewf-font.decorative.blackletter {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-monospaced .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-monospaced .ewf-font.decorative.monospaced {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-handmade .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-handmade .ewf-font.decorative.handmade {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-headings .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-headings .ewf-font.decorative.headings {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-paragraphs .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-decorative.filter-paragraphs .ewf-font.decorative.paragraphs {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 199, ../sass/_ui.sass */
-#ewf-picker .headings {
+
+/*
+ *	Font filters logic (icon images and filtering of results)
+ */
+/* Retina-ized icons for browser interface */
+/* line 287, ../sass/_ui.sass */
+.headings {
   background-image: url('../img/fonts_headings.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_headings.png?1360714058') 1x, url('../img/fonts_headings@2x.png?1360714058') 2x);
 }
-/* line 202, ../sass/_ui.sass */
-#ewf-picker .filter-headings .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 205, ../sass/_ui.sass */
-#ewf-picker .filter-headings .ewf-font.headings {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-serif .ewf-font.headings.serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-sans-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-sans-serif .ewf-font.headings.sans-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-slab-serif .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-slab-serif .ewf-font.headings.slab-serif {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-script .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-script .ewf-font.headings.script {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-blackletter .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-blackletter .ewf-font.headings.blackletter {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-monospaced .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-monospaced .ewf-font.headings.monospaced {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-handmade .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-handmade .ewf-font.headings.handmade {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-decorative .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-decorative .ewf-font.headings.decorative {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-paragraphs .ewf-font {
-  width: 0;
-  margin-left: 0;
-  border-width: 0;
-}
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-headings.filter-paragraphs .ewf-font.headings.paragraphs {
-  width: 111px;
-  margin-left: 14px;
-  border-width: 1px;
-}
-/* line 199, ../sass/_ui.sass */
-#ewf-picker .paragraphs {
+
+/* Retina-ized icons for browser interface */
+/* line 287, ../sass/_ui.sass */
+.paragraphs {
   background-image: url('../img/fonts_paragraphs.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_paragraphs.png?1360714058') 1x, url('../img/fonts_paragraphs@2x.png?1360714058') 2x);
 }
-/* line 202, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs .ewf-font {
+
+/* Retina-ized icons for browser interface */
+/* line 287, ../sass/_ui.sass */
+.serif {
+  background-image: url('../img/fonts_serif.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_serif.png?1360714058') 1x, url('../img/fonts_serif@2x.png?1360714058') 2x);
+}
+
+/* Retina-ized icons for browser interface */
+/* line 287, ../sass/_ui.sass */
+.sans-serif {
+  background-image: url('../img/fonts_sans-serif.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_sans-serif.png?1360714058') 1x, url('../img/fonts_sans-serif@2x.png?1360714058') 2x);
+}
+
+/* Retina-ized icons for browser interface */
+/* line 287, ../sass/_ui.sass */
+.slab-serif {
+  background-image: url('../img/fonts_slab-serif.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_slab-serif.png?1360714058') 1x, url('../img/fonts_slab-serif@2x.png?1360714058') 2x);
+}
+
+/* Retina-ized icons for browser interface */
+/* line 287, ../sass/_ui.sass */
+.script {
+  background-image: url('../img/fonts_script.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_script.png?1360714058') 1x, url('../img/fonts_script@2x.png?1360714058') 2x);
+}
+
+/* Retina-ized icons for browser interface */
+/* line 287, ../sass/_ui.sass */
+.blackletter {
+  background-image: url('../img/fonts_blackletter.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_blackletter.png?1360714058') 1x, url('../img/fonts_blackletter@2x.png?1360714058') 2x);
+}
+
+/* Retina-ized icons for browser interface */
+/* line 287, ../sass/_ui.sass */
+.monospaced {
+  background-image: url('../img/fonts_monospaced.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_monospaced.png?1360714058') 1x, url('../img/fonts_monospaced@2x.png?1360714058') 2x);
+}
+
+/* Retina-ized icons for browser interface */
+/* line 287, ../sass/_ui.sass */
+.handmade {
+  background-image: url('../img/fonts_handmade.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_handmade.png?1360714058') 1x, url('../img/fonts_handmade@2x.png?1360714058') 2x);
+}
+
+/* Retina-ized icons for browser interface */
+/* line 287, ../sass/_ui.sass */
+.decorative {
+  background-image: url('../img/fonts_decorative.png?1360714058');
+  background-image: -webkit-image-set(url('../img/fonts_decorative.png?1360714058') 1x, url('../img/fonts_decorative@2x.png?1360714058') 2x);
+}
+
+/* line 292, ../sass/_ui.sass */
+.filter-headings .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 205, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs .ewf-font.paragraphs {
+
+/* line 295, ../sass/_ui.sass */
+.filter-headings .headings {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-serif .ewf-font {
+
+/* line 292, ../sass/_ui.sass */
+.filter-paragraphs .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-serif .ewf-font.paragraphs.serif {
+
+/* line 295, ../sass/_ui.sass */
+.filter-paragraphs .paragraphs {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-sans-serif .ewf-font {
+
+/* line 292, ../sass/_ui.sass */
+.filter-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-sans-serif .ewf-font.paragraphs.sans-serif {
+
+/* line 295, ../sass/_ui.sass */
+.filter-serif .serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-slab-serif .ewf-font {
+
+/* line 292, ../sass/_ui.sass */
+.filter-sans-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-slab-serif .ewf-font.paragraphs.slab-serif {
+
+/* line 295, ../sass/_ui.sass */
+.filter-sans-serif .sans-serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-script .ewf-font {
+
+/* line 292, ../sass/_ui.sass */
+.filter-slab-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-script .ewf-font.paragraphs.script {
+
+/* line 295, ../sass/_ui.sass */
+.filter-slab-serif .slab-serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-blackletter .ewf-font {
+
+/* line 292, ../sass/_ui.sass */
+.filter-script .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-blackletter .ewf-font.paragraphs.blackletter {
+
+/* line 295, ../sass/_ui.sass */
+.filter-script .script {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-monospaced .ewf-font {
+
+/* line 292, ../sass/_ui.sass */
+.filter-blackletter .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-monospaced .ewf-font.paragraphs.monospaced {
+
+/* line 295, ../sass/_ui.sass */
+.filter-blackletter .blackletter {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-handmade .ewf-font {
+
+/* line 292, ../sass/_ui.sass */
+.filter-monospaced .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-handmade .ewf-font.paragraphs.handmade {
+
+/* line 295, ../sass/_ui.sass */
+.filter-monospaced .monospaced {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-decorative .ewf-font {
+
+/* line 292, ../sass/_ui.sass */
+.filter-handmade .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-decorative .ewf-font.paragraphs.decorative {
+
+/* line 295, ../sass/_ui.sass */
+.filter-handmade .handmade {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
-/* line 213, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-headings .ewf-font {
+
+/* line 292, ../sass/_ui.sass */
+.filter-decorative .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 216, ../sass/_ui.sass */
-#ewf-picker .filter-paragraphs.filter-headings .ewf-font.paragraphs.headings {
+
+/* line 295, ../sass/_ui.sass */
+.filter-decorative .decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 292, ../sass/_ui.sass */
+.filter-n1 .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+
+/* line 295, ../sass/_ui.sass */
+.filter-n1 .n1 {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 292, ../sass/_ui.sass */
+.filter-n2 .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+
+/* line 295, ../sass/_ui.sass */
+.filter-n2 .n2 {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 292, ../sass/_ui.sass */
+.filter-n3 .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+
+/* line 295, ../sass/_ui.sass */
+.filter-n3 .n3 {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 292, ../sass/_ui.sass */
+.filter-n4 .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+
+/* line 295, ../sass/_ui.sass */
+.filter-n4 .n4 {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 292, ../sass/_ui.sass */
+.filter-n5 .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+
+/* line 295, ../sass/_ui.sass */
+.filter-n5 .n5 {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 292, ../sass/_ui.sass */
+.filter-n6 .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+
+/* line 295, ../sass/_ui.sass */
+.filter-n6 .n6 {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 292, ../sass/_ui.sass */
+.filter-n7 .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+
+/* line 295, ../sass/_ui.sass */
+.filter-n7 .n7 {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 292, ../sass/_ui.sass */
+.filter-n8 .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+
+/* line 295, ../sass/_ui.sass */
+.filter-n8 .n8 {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 292, ../sass/_ui.sass */
+.filter-n9 .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+
+/* line 295, ../sass/_ui.sass */
+.filter-n9 .n9 {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-headings.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-headings.filter-serif .ewf-font.headings.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-headings.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-headings.filter-sans-serif .ewf-font.headings.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-headings.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-headings.filter-slab-serif .ewf-font.headings.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-headings.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-headings.filter-script .ewf-font.headings.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-headings.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-headings.filter-blackletter .ewf-font.headings.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-headings.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-headings.filter-monospaced .ewf-font.headings.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-headings.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-headings.filter-handmade .ewf-font.headings.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-headings.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-headings.filter-decorative .ewf-font.headings.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-paragraphs.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-paragraphs.filter-serif .ewf-font.paragraphs.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-paragraphs.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-paragraphs.filter-sans-serif .ewf-font.paragraphs.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-paragraphs.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-paragraphs.filter-slab-serif .ewf-font.paragraphs.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-paragraphs.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-paragraphs.filter-script .ewf-font.paragraphs.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-paragraphs.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-paragraphs.filter-blackletter .ewf-font.paragraphs.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-paragraphs.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-paragraphs.filter-monospaced .ewf-font.paragraphs.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-paragraphs.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-paragraphs.filter-handmade .ewf-font.paragraphs.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 302, ../sass/_ui.sass */
+.filter-paragraphs.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 305, ../sass/_ui.sass */
+.filter-paragraphs.filter-decorative .ewf-font.paragraphs.decorative {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;

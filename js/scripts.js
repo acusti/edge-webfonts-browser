@@ -4,23 +4,25 @@
 		font_include_url_suffix = '.js',
 		d                    = $.Deferred(),
 		$picker              = $('#ewf-picker'),
-		$sidebar             = $picker.find('.ewf-side-bar'),
+		$toolbars            = $picker.find('.ewf-toolbars'),
 		$results             = $picker.find('.ewf-results'),
 		$page_font_name      = $('#page-font-notice').find('.current-font-name'),
 		font_classifications = [
-			{ class_name: "serif",	   localized_name: "Serif" },
-			{ class_name: "sans-serif",  localized_name: "Sans-Serif" },
-			{ class_name: "slab-serif",  localized_name: "Slab-Serif" },
-			{ class_name: "script",	  localized_name: "Script" },
-			{ class_name: "blackletter", localized_name: "Blackletter" },
-			{ class_name: "monospaced",  localized_name: "Monospaced" },
-			{ class_name: "handmade",	localized_name: "Handmade" },
-			{ class_name: "decorative",  localized_name: "Decorative" }
+			{ class_name: 'serif',	   localized_name: 'Serif' },
+			{ class_name: 'sans-serif',  localized_name: 'Sans-Serif' },
+			{ class_name: 'slab-serif',  localized_name: 'Slab-Serif' },
+			{ class_name: 'script',	  localized_name: 'Script' },
+			{ class_name: 'blackletter', localized_name: 'Blackletter' },
+			{ class_name: 'monospaced',  localized_name: 'Monospaced' },
+			{ class_name: 'handmade',	localized_name: 'Handmade' },
+			{ class_name: 'decorative',  localized_name: 'Decorative' }
 		],
 		font_recommendations = [
-			 { class_name: "headings",	localized_name: "Headings" },
-			 { class_name: "paragraphs",  localized_name: "Paragraphs" }
+			 { class_name: 'headings',	localized_name: 'Headings' },
+			 { class_name: 'paragraphs',  localized_name: 'Paragraphs' }
 		],
+		font_variations = [],
+		font_families_map = [],
 		font_filters = font_classifications.concat(font_recommendations),
 		all_fonts,
 		all_slugs,
@@ -28,8 +30,30 @@
 		fonts_by_name,
 		fonts_by_slug,
 		i,
+		the_family,
 		search_timeout;
 
+	// Initialize font variations
+	for (i = 1; i <= 9; i++) {
+		font_variations.push({class_name: 'n' + i, localized_name: i});
+	 }
+	i = 0;
+
+	// Initialize font_classifications to font_families map
+	for (i = 0; i < font_classifications.length; i++) {
+		if (font_classifications[i].class_name === 'serif' || font_classifications[i].class_name === 'slab-serif')
+			the_family = 'serif';
+		else if (font_classifications[i].class_name === 'sans-serif')
+			the_family = 'sans-serif';
+		else if (font_classifications[i].class_name === 'script' || font_classifications[i].class_name === 'handmade')
+			the_family = 'cursive';
+		else if (font_classifications[i].class_name === 'monospaced')
+			the_family = 'monospace';
+		else
+			the_family = 'decorative';
+
+		font_families_map[font_classifications[i].class_name] = the_family;
+	}
 	/**
 	 * Retrieve font metadata and set it up
 	 */
@@ -97,8 +121,9 @@
 				data_end = data.responseText.lastIndexOf('}') + 1,
 				font_idx_mod = 1,
 				font_idx,
-				f/*,
-				i,
+				f,
+				f_all_weights
+				i/*,
 				font_includes = [],
 				all_fvds = []*/;
 
@@ -112,8 +137,8 @@
 			organizeFamilies(data);
 			// TODO: use jQuery Deferred + promise for this
 			$results.html(Mustache.render($results.html(), {families: all_fonts}));
-			// Choose a font for the page:
-			// Following logic chooses any serif or sans-serif with more than one variation:
+			// Choose a font for the page
+			// Following logic chooses a random serif or sans-serif with at least 4 variations:
 			font_idx = Math.round(Math.random() * all_fonts.length);
 			if (font_idx > (all_fonts.length / 2))
 				font_idx_mod = -1;
@@ -121,10 +146,11 @@
 			do {
 				f = all_fonts[font_idx];
 				font_idx += font_idx_mod;
-			} while (f.variations.length < 2 || (f.classifications[0] !== 'sans-serif' && f.classifications[0] !== 'serif'));
-			// Following logic chooses a randow 'headings' font:
+			} while (f.variations.length < 4 || (f.classifications[0] !== 'sans-serif' && f.classifications[0] !== 'serif'));
+			// Following logic chooses a random 'headings' font:
 			// font_idx = Math.round(Math.random() * fonts_by_class['headings'].length);
 			// f = fonts_by_class['headings'][font_idx];
+
 			// To create full script element for including a font (also works with more than one font):
 			// if (f) {
 			// 	for (i = 0; i < f.variations.length; i++) {
@@ -135,6 +161,14 @@
 			// if (font_includes.length) {
 			// 	$picker.prepend(createInclude(font_includes));
 			// }
+
+			// Find a font with 18 variations (all 9 weights + italics) for the top tool bar
+			i = all_fonts.length - 1;
+			do {
+				f_all_weights = all_fonts[i];
+				i--;
+			} while (f_all_weights.variations.length < 18 && i >= 0);
+
 			$page_font_name.html(f.name);
 			$.getScript(font_include_url_prefix + f.slug + font_include_url_suffix, function() {
 				var $html = $('html').css('fontFamily', f.slug);
@@ -142,7 +176,13 @@
 					$html.removeClass('preload');
 				}, 350);
 			});
-			d.resolve();
+
+			// Load all weights font for toolbar
+			$.getScript(font_include_url_prefix + f_all_weights.slug + ':n1,n2,n3,n4,n5,n6,n7,n8,n9' + font_include_url_suffix, function() {
+				$('.font-weights').css('fontFamily', f_all_weights.slug);
+			});
+
+			//d.resolve();
 		},
 		error: function () {
 			d.reject('XHR request (using YQL) to "families" API failed');
@@ -150,17 +190,19 @@
 	});
 
 	/**
-	 * Setup sidebar buttons
+	 * Setup toolbar buttons
 	 */
 
-	// Render font classifications and recommendations
-	$sidebar.html(Mustache.render($sidebar.html(), {classifications: font_classifications, recommendations: font_recommendations}));
+	// Render font classifications, recommendations, and variations
+	$toolbars.html(Mustache.render($toolbars.html(), {variations: font_variations, classifications: font_classifications, recommendations: font_recommendations}));
 
 	// Add button handlers
 	$('.ewf-classification-button').on('click', function() {
 		var $button = $(this),
 		    filter = $button.data('classification');
 
+		// Deselect any other selected buttons in the same 'group' (ul)
+		$button.closest('li').siblings().find('.selected').trigger('click');
 		$results.toggleClass('filter-' + filter);
 		$button.toggleClass('selected');
 	});
@@ -188,40 +230,35 @@
 			}
 		}, timeout_duration);
 	});
-	// for (i = 0; i < font_filters.length; i++) {
-	// }
 
-	/**
-	 * Logic for font previewer from Adobe's Edge WebFonts page http://html.adobe.com/edge/webfonts/
-	 */
+	// Set up results listener
+	$('.ewf-results').on('click', '.ewf-font', function() {
+		var $font = $(this),
+		    slug = this.id,
+		    is_activated = $.data(this, 'is_activated');
 
-	// Load initial font selection
-	$.getScript("http://use.edgefonts.net/league-gothic.js");
+		$font.siblings('.active').removeClass('active');
+		$font.addClass('active');
 
-	function setPreviouslySelectedFontFamilyName(n) {
-		$('#fontSelector').data('previouslySelectedFontFamilyName', n);
-	}
-
-	setPreviouslySelectedFontFamilyName('league-gothic');
-	$('#fontSelector').change(function() {
-		var $selectedFontOption = $('#fontSelector option:selected'),
-			selectedFontFamilyName = this.value;
-		if ($selectedFontOption.data('loaded') === true) {
-			$('#typeTester').css('font-family', selectedFontFamilyName);
-			$('#edgeWebFontsScriptName').html(selectedFontFamilyName);
-			$('#edgeWebFontsCSSName').html(selectedFontFamilyName);
-			setPreviouslySelectedFontFamilyName(selectedFontFamilyName);
+		if (is_activated) {
+			$('#type-tester').css('font-family', slug);
 		} else {
-			$.getScript("http://use.edgefonts.net/" + this.value + ".js", function() {
-				$selectedFontOption.data('loaded', true);
-				var fontFamilyStack = selectedFontFamilyName + ', ' + $('#fontSelector').data('previouslySelectedFontFamilyName');
-				$('#typeTester').css('font-family', fontFamilyStack);
-				$('#edgeWebFontsScriptName').html(selectedFontFamilyName);
-				$('#edgeWebFontsCSSName').html(selectedFontFamilyName);
-				setPreviouslySelectedFontFamilyName(selectedFontFamilyName);
+			$.data(this, 'is_activated', true);
+			$.getScript(font_include_url_prefix + slug + font_include_url_suffix, function() {
+				var $font_embed = $('#font-embed-code').addClass('active');
+				$font_embed.find('.include-js').html('&lt;script src="' + font_include_url_prefix + slug + font_include_url_suffix + '"&gt;&lt;/script&gt;');
+				$font_embed.find('.font-css').html('font-family: ' + slug + ', ' + font_families_map[fonts_by_slug[slug].classifications[0]] + ';');
+				$font_embed.find('.font-name').html(fonts_by_slug[slug].name);
+				// Give it some extra milliseconds to avoid FOUT
+				window.setTimeout(function() {
+					$('#type-tester').css('font-family', slug);
+				}, 200);
 			});
+			$('#type-tester').addClass('active');
 		}
 	});
+	// for (i = 0; i < font_filters.length; i++) {
+	// }
 
 	function createInclude(fonts) {
 		var i,

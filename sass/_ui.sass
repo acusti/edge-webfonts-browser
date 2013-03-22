@@ -1,10 +1,16 @@
-$button-width: 30px
-$button-height: $button-width
-$search-height: $button-height - 2
 $font-height: 121px
 $font-width: 111px
 $font-spacing: 14px
-$font-filters: "serif" "sans-serif" "slab-serif" "script" "blackletter" "monospaced" "handmade" "decorative" "headings" "paragraphs"
+$button-width: 30px
+$button-height: $button-width
+$search-height: $button-height - 2
+$type-tester-height: $search-height + $font-spacing + $button-height - 6px
+$font-recommendations: "headings" "paragraphs"
+$font-classifications: "serif" "sans-serif" "slab-serif" "script" "blackletter" "monospaced" "handmade" "decorative"
+$font-weights: ()
+@for $n from 1 through 9
+	$font-weights: append($font-weights, "n#{$n}")
+$font-filters: join(join($font-recommendations, $font-classifications), $font-weights)
 
 @mixin hide-font
 	width: 0
@@ -22,8 +28,56 @@ $font-filters: "serif" "sans-serif" "slab-serif" "script" "blackletter" "monospa
 	top: 0
 	right: 5%
 	padding: 0.5em 1em
-	background: rgba(lighten($accent-color, 35%), 0.75)
+	background: rgba($notice-bckg-color, 0.75)
 
+#font-embed-code
+	position: absolute
+	height: 0
+	bottom: -60px
+	left: 15%
+	width: 70%
+	padding: 0 1em
+	overflow: hidden
+	background: rgba($notice-bckg-color, 0.9)
+	+transition-property(bottom)
+	+transition-duration(0.2s)
+	
+	&.active
+		height: auto
+		bottom: 0
+
+#type-tester
+	display: block
+	width: 50%
+	float: right
+	height: 0
+	overflow: hidden
+	border: 0
+	padding: 0
+	+transition-property(height)
+	+transition-duration(0.2s)
+	background-color: $notice-bckg-color
+
+	@media (max-width: $mid-breakpoint)
+		width: 45%
+
+	@media (max-width: $mid-breakpoint - 100)
+		width: 40%
+
+	.ewf-toolbars &
+		@media (max-width: $narrow-breakpoint)
+			width: 95%
+			float: none
+			height: $type-tester-height
+			box-shadow: 0 0 0 4px white, 0 0 0 5px $grey-border-color
+			margin: 5px 0 0 5px
+
+	&.active
+		height: $type-tester-height
+		padding: 0.2em 0.3em
+		margin-right: 6px
+		box-shadow: 0 0 0 5px white, 0 0 0 6px $grey-border-color
+		
 .edge-web-fonts
 	width: $total-width
 	margin: 0 auto 1em
@@ -32,186 +86,221 @@ $font-filters: "serif" "sans-serif" "slab-serif" "script" "blackletter" "monospa
 	position: relative
 	width: 100%
 
-	.ewf-side-bar
-		position: absolute
-		top: $font-spacing + $search-height
-		left: 0
+.ewf-search-fonts
+	display: block
+	width: 40%
+	max-width: 392px
+	min-width: 250px
+	margin: $font-spacing 0
+	padding: 0 0 0 $button-width - 2
+	height: $search-height
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.48)
+	border: $grey-border
+	background-color: $button-bckg-color
+	font-size: 0.85em
+	+transition-property(background-color)
+	+transition-duration(0.2s)
 
-	.ewf-search-fonts
-		display: block
-		width: 40%
-		max-width: 392px
-		min-width: 250px
-		margin: $font-spacing 0
-		padding: 0 0 0 $button-width - 2
-		height: $search-height
-		text-shadow: 0 1px 0 rgba(255, 255, 255, 0.48)
-		border: $grey-border
-		background-color: $button-bckg-color
-		font-size: 0.85em
-		+transition-property(background-color)
-		+transition-duration(0.2s)
+	&:focus
+		background-color: white
 
-		&:focus
-			background-color: white
-	
-	button
-		padding: 0
-	
-	button:hover
-		background: #dce1e4
-		background-position: 0 -30px
-	
-	button.selected
-		background: #bdbdbd
-	
-	.ewf-button
-		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.48) inset
-		border: $grey-border
-		background: #dbddde
-		border-radius: 3px
-		width: $button-width + 2
-		height: $button-height + 2
-	
-	.ewf-button:disabled
-		background-position: -$button-width 0
-	
-	ul
-		padding: 0
-		margin: 0
-		margin-bottom: 18px
-	
-	li
-		list-style: none
-		height: 30px
-	
-	li button
-		border: $grey-border
-		background: $button-bckg-color
-		width: $button-width + 2
-		height: $button-height + 2
+.ewf-side-bar
+	position: absolute
+	top: $font-spacing + $search-height
+	left: 0
 
-		&:hover
-			background-color: darken($button-bckg-color, 7%)
+	@media (max-width: $narrow-breakpoint)
+		top: $font-spacing * 2 + $search-height + $type-tester-height
 
-		&.selected
-			background-color: darken($button-bckg-color, 20%)
+ul
+	padding: 0
+	margin: 0
+	margin-bottom: $font-spacing
 
-		&:active
-			box-shadow: 0 0 $button-width / 2 rgba(0, 0, 0, 0.4) inset
-
-		&:disabled,
-		&.disabled
-			div
-				background-position: -$button-width 0
-
-		> *
-			background-repeat: no-repeat
+	.ewf-top-bar &
+		+inline-block
+		margin-right: $font-spacing
 	
-	li:first-child button
+	.ewf-top-bar &.font-weights
+		margin-left: $button-width + $font-spacing + 2
+
+	.ewf-top-bar &.font-italics
+		display: none
+
+li
+	list-style: none
+	height: 30px
+
+	.ewf-top-bar &
+		+inline-block
+		margin: 0 -5px 0 0
+
+li button
+	border: $grey-border
+	background: $button-bckg-color
+	width: $button-width + 2
+	height: $button-height + 2
+	padding: 0
+
+	&:hover
+		background-color: darken($button-bckg-color, 7%)
+
+	&.selected
+		background-color: darken($button-bckg-color, 20%)
+
+	&:active
+		box-shadow: 0 0 $button-width / 2 rgba(0, 0, 0, 0.4) inset
+
+	&:disabled,
+	&.disabled
+		div
+			background-position: -$button-width 0
+
+	> *
+		background-repeat: no-repeat
+
+	.ewf-top-bar &
+		font-size: 20px
+		color: rgb(65, 66, 66)
+		font-family: inherit
+		line-height: $button-height + 2
+		
+		.italics
+			font-style: italic
+		
+		$n: 0
+		@each $weight in $font-weights
+			$n: $n + 1
+			.#{$weight}
+				font-weight: $n * 100
+
+li:first-child button
+	
+	.ewf-side-bar &
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.48) inset
 		border-top-left-radius: 3px
 		border-top-right-radius: 3px
+
+	.ewf-top-bar &
+		box-shadow: 1px 0px 0 rgba(255, 255, 255, 0.48) inset
+		border-top-left-radius: 3px
+		border-bottom-left-radius: 3px
+
+li:last-child button
 	
-	li:last-child button
+	.ewf-side-bar &
 		border-bottom-left-radius: 3px
 		border-bottom-right-radius: 3px
-	
-	.ewf-icon
-		padding: 0
-		margin: 0 auto
-		height: 100%
-	
-	.ewf-icon:disabled
-		background-position: -$button-width 0
-			
-	.ewf-results
-		margin-left: $button-width + 2
-		width: 97.5%
-		height: $font-height * 4 + $font-spacing * 3
-		+overflow-scroll
-		font-size: 1%
-	
-		.ewf-font
-			+inline-block
-			width: $font-width
-			height: $font-height
-			margin-left: $font-spacing
-			margin-bottom: $font-spacing
-			padding-top: $font-height - 41px
-			background-repeat: no-repeat
-			border: $grey-border
-			background-color: white
-			background-position: 50% -20px
-			cursor: pointer
-			// .01 * 10000 = 100
-			font-size: 10000%
-			overflow: hidden
-			+transition-property(width)
-			+transition-duration(0.3s)
-		
-			&:hover
-				border-color: $accent-color
-				+box-shadow(0 0 3px $accent-color)
 
-			&.non-match
-				+hide-font
-		
-		.ewf-font-details
-			display: table
-			height: 39px
-			width: 100%
-			padding: 0 6px
-			background-color: #e5e8e7
-			border-top: 1px solid #b4b6b5
-			overflow: hidden
-			cursor: pointer
-		
-			label
-				display: table-cell
-				background-color: transparent
-				vertical-align: middle
-				// 0.8125 * 16 = 13
-				font-size: 0.8125em
-				text-shadow: 0 1px 0 #fff
-				width: auto
-				text-align: left
-				line-height: 1.2
-				padding: 0
-				cursor: pointer
-	
-	.wait
-		top: 250px
-		left: 300px
-	
+	.ewf-top-bar &
+		border-bottom-right-radius: 3px
+		border-top-right-radius: 3px
 
-	.ewf-search-fonts
-		+image-set("fonts_search", "png")
+.ewf-icon
+	padding: 0
+	margin: 0 auto
+	height: 100%
+
+.ewf-icon:disabled
+	background-position: -$button-width 0
+		
+.ewf-results
+	margin-left: $button-width + 2
+	width: 97.5%
+	height: $font-height * 4 + $font-spacing * 3 + 4
+	/* Add top padding for active font style and remove extra padding with negative margin (still need to compensate in height above for padding, however) */
+	padding-top: 4px
+	margin-top: -4px
+	+overflow-scroll
+	font-size: 1%
+
+	.ewf-font
+		+inline-block
+		width: $font-width
+		height: $font-height
+		margin-left: $font-spacing
+		margin-bottom: $font-spacing
+		padding-top: $font-height - 41px
 		background-repeat: no-repeat
-		background-position: 0 ($search-height - $button-height) / 2
+		border: $grey-border
+		background-color: white
+		background-position: 50% -20px
+		cursor: pointer
+		// .01 * 10000 = 100
+		font-size: 10000%
+		overflow: hidden
+		+transition-property(padding)
+		+transition-duration(0.3s)
+		
+		&:hover
+			border-color: $accent-color
+			+box-shadow(0 0 3px $accent-color)
+
+		&.active
+			border-color: rgb(0, 185, 0)
+			+box-shadow(0 0 5px rgb(0, 185, 0))
+			//padding-left: $font-width + floor($font-spacing / 2) - 1
+			//padding-right: $font-width + floor($font-spacing / 2) - 1
+
+		#ewf-picker &.non-match
+			+hide-font
 	
-	/**
-	 *	Font filters logic (icon images and filtering of results)
-	 */
+	.ewf-font-details
+		display: table
+		height: 39px
+		width: 100%
+		padding: 0 6px
+		background-color: #e5e8e7
+		border-top: 1px solid #b4b6b5
+		overflow: hidden
+		cursor: pointer
+	
+		label
+			display: table-cell
+			background-color: transparent
+			vertical-align: middle
+			// 0.8125 * 16 = 13
+			font-size: 0.8125em
+			text-shadow: 0 1px 0 #fff
+			width: auto
+			text-align: left
+			line-height: 1.2
+			padding: 0
+			cursor: pointer
 
-	@each $filter in $font-filters
-		/* Retina-ized icons for browser interface */
-		.#{$filter}
-			+image-set("fonts_" + $filter, "png")
+.wait
+	top: 250px
+	left: 300px
 
-		.filter-#{$filter} .ewf-font
+
+.ewf-search-fonts
+	+image-set("fonts_search", "png")
+	background-repeat: no-repeat
+	background-position: 0 ($search-height - $button-height) / 2
+	
+/**
+ *	Font filters logic (icon images and filtering of results)
+ */
+// Icon images for font recommendations and classifications
+@each $filter in join($font-recommendations, $font-classifications)
+	/* Retina-ized icons for browser interface */
+	.#{$filter}
+		+image-set("fonts_" + $filter, "png")
+
+// Basic font filtering logic
+@each $filter in $font-filters
+	.filter-#{$filter} .ewf-font
+		+hide-font
+
+	.filter-#{$filter} .#{$filter}
+		+show-font
+
+// Add support for a recommendation + classification filter
+@each $recommendation in $font-recommendations
+	
+	@each $classification in $font-classifications
+		.filter-#{$recommendation}.filter-#{$classification} .ewf-font
 			+hide-font
 
-			&.#{$filter}
+			&.#{$recommendation}.#{$classification}
 				+show-font
-		
-		// Should be a way to generate styles to cover all possible combination of styles of .and-search (as opposed to OR, which is already covered)
-		// @for $i from 1 through length($font-filters)
-		@each $sub-filter in $font-filters
-			@if $filter != $sub-filter
-				//.and-search.filter-#{$filter}.filter-#{$sub-filter} .ewf-font
-				.filter-#{$filter}.filter-#{$sub-filter} .ewf-font
-					+hide-font
-
-					&.#{$filter}.#{$sub-filter}
-						+show-font

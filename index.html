@@ -14,13 +14,32 @@
 		<h1>Adobe Edge Web Font Browser</h1>
 		<h2>Helping you find the right free web font since March 2012</h2>
 	</header>
-	<div id="page-font-notice">
+	<div id="page-font-notice" class="note">
 		The current page font is “<b class="current-font-name"></b>”
 	</div>
 	<div class="edge-web-fonts">
 		<div id="ewf-picker">
-			<div class="ewf-tabs">
-				<input type="text" placeholder="Search" class="ewf-search-fonts">
+			<div class="ewf-toolbars">
+				<div class="ewf-top-bar">
+					<textarea id="type-tester">Click to edit…</textarea>
+					<input type="text" placeholder="Search" class="ewf-search-fonts">
+					<ul class="font-weights">
+						{{#variations}}
+							<li>
+								<button title="Weight {{localized_name}}00" data-classification="{{class_name}}" class="ewf-classification-button">
+									<div class="ewf-icon {{class_name}}">{{localized_name}}</div>
+								</button>
+							</li>
+						{{/variations}}
+					</ul>
+					<ul class="font-italics">
+						<li>
+							<button title="Include italics for all weights" data-classification="italics" class="ewf-classification-button">
+								<div class="ewf-icon italics">i</div>
+							</button>
+						</li>
+					</ul>
+				</div>
 				<div class="ewf-side-bar">
 					<ul class="recommended-uses">
 						{{#recommendations}}
@@ -56,6 +75,10 @@
 				{{/families}}
 			</div>
 		</div>
+	</div>
+	<div id="font-embed-code" class="note">
+		<p><strong>To use <span class="font-name">the selected font</span> on your web page, add the following script element to your HTML and use <code class="font-css">font-family: font-slug”</code> in your CSS</strong></p>
+		<code class="include-js"></code>
 	</div>
 	<script src="http://code.jquery.com/jquery-2.0.0b1.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery.min.js?ver=2.0.0b1"><\/script>')</script>
