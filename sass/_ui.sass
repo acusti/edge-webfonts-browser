@@ -67,6 +67,7 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 	+transition-property(height)
 	+transition-duration(0.2s)
 	background-color: $notice-bckg-color
+	overflow-y: auto
 
 	@media (max-width: $mid-breakpoint)
 		width: 45%
@@ -131,12 +132,12 @@ ul
 		+inline-block
 		margin-right: $font-spacing
 	
-	.ewf-top-bar &.font-weights
-		margin-left: $button-width + $font-spacing + 2
-		white-space: nowrap
+		&.font-weights
+			margin-left: $button-width + $font-spacing + 2
+			white-space: nowrap
 
-	.ewf-top-bar &.font-italics
-		display: none
+		&.font-italics
+			display: none
 
 li
 	list-style: none
@@ -154,6 +155,10 @@ li button
 	width: $button-width + 2
 	height: $button-height + 2
 	padding: 0
+
+	.ewf-top-bar &
+		@media (max-width: $narrow-breakpoint)
+			width: $button-width - 1
 
 	&:hover
 		background-color: darken($button-bckg-color, 7%)
@@ -215,7 +220,7 @@ li:last-child button
 .ewf-icon
 	padding: 0
 	margin: 0 auto
-	width: $button-width
+	width: 100%
 	height: $button-height
 
 .ewf-icon:disabled
