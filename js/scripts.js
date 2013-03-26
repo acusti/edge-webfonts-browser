@@ -36,7 +36,7 @@
 	// Initialize font variations
 	for (i = 1; i <= 9; i++) {
 		font_variations.push({class_name: 'n' + i, localized_name: i});
-	 }
+	}
 	i = 0;
 
 	// Initialize font_classifications to font_families map
@@ -65,12 +65,31 @@
 			$font_embed.find('.font-name').html(fonts[i].name);
 		}
 	};
+
+	var createInclude = function(fonts) {
+		var i,
+		    font_strings = [],
+		    font_string;
+
+		for (i = 0; i < fonts.length; i++) {
+			font_string = fonts[i].slug;
+			if (fonts[i].fvds) {
+				font_string += ":" + fonts[i].fvds.join(",");
+			}
+			if (fonts[i].subset) {
+				font_string += ":" + fonts[i].subset;
+			}
+			font_strings.push(font_string);
+		}
+		return '<script src="' + font_include_url_prefix + font_strings.join(";") + font_include_url_suffix + '"></script>';
+	};
+
 	/**
 	 * Retrieve font metadata and set it up
 	 */
 
 	// Setup callback function for metadata request
-	function organizeFamilies(families) {
+	var organizeFamilies = function(families) {
 		all_fonts = families.families;
 		all_slugs = [];
 		var i, j;
@@ -120,8 +139,8 @@
 			fonts_by_name[all_fonts[i].name] = all_fonts[i];
 			fonts_by_slug[all_fonts[i].slug] = all_fonts[i];
 		}
-	}
-		
+	};
+	
 	// Request font metadata
 	$.ajax({
 		url: api_url_prefix + 'families',
@@ -133,7 +152,7 @@
 				font_idx_mod = 1,
 				font_idx,
 				f,
-				f_all_weights
+				f_all_weights,
 				i/*,
 				font_includes = [],
 				all_fvds = []*/;
@@ -267,24 +286,4 @@
 			$('#type-tester').addClass('active');
 		}
 	});
-	// for (i = 0; i < font_filters.length; i++) {
-	// }
-
-	function createInclude(fonts) {
-		var i,
-		    font_strings = [],
-		    font_string;
-
-		for (i = 0; i < fonts.length; i++) {
-			font_string = fonts[i].slug;
-			if (fonts[i].fvds) {
-				font_string += ":" + fonts[i].fvds.join(",");
-			}
-			if (fonts[i].subset) {
-				font_string += ":" + fonts[i].subset;
-			}
-			font_strings.push(font_string);
-		}
-		return '<script src="' + font_include_url_prefix + font_strings.join(";") + font_include_url_suffix + '"></script>';
-	}
 })(jQuery);
