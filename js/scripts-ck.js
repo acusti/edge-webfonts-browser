@@ -670,6 +670,17 @@ jQuery.ajax = (function(_ajax){
 
 		font_families_map[font_classifications[i].class_name] = the_family;
 	}
+
+	var updateFontEmbed = function(fonts) {
+		var $font_embed = $('#font-embed-code').addClass('active'),
+		    i;
+
+		for (i = 0; i < fonts.length; i++) {
+			$font_embed.find('.include-js').html('&lt;script src="' + font_include_url_prefix + fonts[i].slug + font_include_url_suffix + '"&gt;&lt;/script&gt;');
+			$font_embed.find('.font-css').html('font-family: ' + fonts[i].slug + ', ' + font_families_map[fonts[i].classifications[0]] + ';');
+			$font_embed.find('.font-name').html(fonts[i].name);
+		}
+	};
 	/**
 	 * Retrieve font metadata and set it up
 	 */
@@ -851,6 +862,7 @@ jQuery.ajax = (function(_ajax){
 	$('.ewf-results').on('click', '.ewf-font', function() {
 		var $font = $(this),
 		    slug = this.id,
+		    font = fonts_by_slug[slug],
 		    is_activated = $.data(this, 'is_activated');
 
 		$font.siblings('.active').removeClass('active');
@@ -858,13 +870,11 @@ jQuery.ajax = (function(_ajax){
 
 		if (is_activated) {
 			$('#type-tester').css('font-family', slug);
+			updateFontEmbed([font]);
 		} else {
 			$.data(this, 'is_activated', true);
 			$.getScript(font_include_url_prefix + slug + font_include_url_suffix, function() {
-				var $font_embed = $('#font-embed-code').addClass('active');
-				$font_embed.find('.include-js').html('&lt;script src="' + font_include_url_prefix + slug + font_include_url_suffix + '"&gt;&lt;/script&gt;');
-				$font_embed.find('.font-css').html('font-family: ' + slug + ', ' + font_families_map[fonts_by_slug[slug].classifications[0]] + ';');
-				$font_embed.find('.font-name').html(fonts_by_slug[slug].name);
+				updateFontEmbed([font]);
 				// Give it some extra milliseconds to avoid FOUT
 				window.setTimeout(function() {
 					$('#type-tester').css('font-family', slug);
