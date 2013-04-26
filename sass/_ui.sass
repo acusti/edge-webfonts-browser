@@ -104,6 +104,7 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 	+transition-duration(0.2s)
 	background-color: $notice-bckg-color
 	overflow-y: auto
+	resize: vertical
 
 	@media (max-width: $mid-breakpoint)
 		width: 45%
@@ -171,6 +172,7 @@ ul
 		&.font-weights
 			margin-left: $button-width + $font-spacing + 2
 			white-space: nowrap
+			font-family: exo, sans-serif
 
 		&.font-italics
 			display: none

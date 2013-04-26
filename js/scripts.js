@@ -153,10 +153,7 @@
 				font_idx_mod = 1,
 				font_idx,
 				f,
-				f_all_weights,
-				i/*,
-				font_includes = [],
-				all_fvds = []*/;
+				i;
 
 			data = data.responseText.substring(data_start, data_end);
 
@@ -193,24 +190,13 @@
 			// 	$picker.prepend(createInclude(font_includes));
 			// }
 
-			// Find a font with 18 variations (all 9 weights + italics) for the top tool bar
-			i = all_fonts.length - 1;
-			do {
-				f_all_weights = all_fonts[i];
-				i--;
-			} while (f_all_weights.variations.length < 18 && i >= 0);
-
+			// Load and set page font
 			$page_font_name.html(f.name);
 			$.getScript(font_include_url_prefix + f.slug + font_include_url_suffix, function() {
 				var $html = $('html').css('fontFamily', f.slug);
 				window.setTimeout(function() {
 					$html.removeClass('preload');
 				}, 350);
-			});
-
-			// Load all weights font for toolbar
-			$.getScript(font_include_url_prefix + f_all_weights.slug + ':n1,n2,n3,n4,n5,n6,n7,n8,n9' + font_include_url_suffix, function() {
-				$('.font-weights').css('fontFamily', f_all_weights.slug);
 			});
 
 			//d.resolve();

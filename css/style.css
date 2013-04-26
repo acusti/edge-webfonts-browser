@@ -439,6 +439,7 @@ ul {
 .ewf-top-bar ul.font-weights {
   margin-left: 46px;
   white-space: nowrap;
+  font-family: exo, sans-serif;
 }
 /* line 177, ../sass/_ui.sass */
 .ewf-top-bar ul.font-italics {
