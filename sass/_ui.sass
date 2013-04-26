@@ -1,0 +1,415 @@
+$font-height: 121px
+$font-width: 111px
+$font-spacing: 14px
+$button-width: 30px
+$button-height: $button-width
+$search-height: $button-height - 2
+$type-tester-height: $search-height + $font-spacing + $button-height - 6px
+$font-recommendations: "headings" "paragraphs"
+$font-classifications: "serif" "sans-serif" "slab-serif" "script" "blackletter" "monospaced" "handmade" "decorative"
+$font-weights: ()
+@for $n from 1 through 9
+	$font-weights: append($font-weights, "n#{$n}")
+$font-filters: join(join($font-recommendations, $font-classifications), $font-weights)
+
+@mixin hide-font
+	width: 0
+	margin-left: 0
+	border-width: 0
+
+@mixin show-font
+	width: $font-width
+	margin-left: $font-spacing
+	border-width: 1px
+
+#page-font-notice
+	position: absolute
+	z-index: 1
+	top: 0
+	right: 5%
+	padding: 0.5em 1em
+	background: rgba($notice-bckg-color, 0.9)
+	border: 1px solid lighten($notice-bckg-color, 5%)
+	border-top: 0
+
+#font-embed-code
+	position: fixed
+	height: 0
+	bottom: -60px
+	left: 0
+	width: 100%
+	padding: 0 1em
+	overflow: hidden
+	background: $notice-bckg-color
+	+transition-property(bottom)
+	+transition-duration(0.2s)
+	
+	@media (max-width: $narrow-breakpoint)
+		width: 100%
+		padding: 0 0.5em
+		left: 0
+		line-height: 1.2
+
+		p,
+		code
+			margin: 0.5em 0
+
+	&.active
+		height: auto
+		bottom: 0
+
+	&.hidden
+		bottom: -40px
+		height: 40px + $base-font-size + 8
+
+		> *
+			display: none
+
+		> .toggle
+			display: block
+			top: 0
+
+	.toggle
+		position: absolute
+		display: block
+		right: 0.5em
+		top: 1em
+		overflow: hidden
+		padding-top: $base-font-size + 2
+		height: 0
+		width: $base-font-size
+		cursor: pointer
+
+		&::after
+			position: absolute
+			content: "﹀"
+			height: $base-font-size - 1
+			width: $base-font-size
+			top: 0
+			left: 0
+			text-align: center
+
+	&.hidden .toggle::after
+		content: "︿"
+
+#type-tester
+	display: block
+	width: 50%
+	float: right
+	height: 0
+	overflow: hidden
+	border: 0
+	padding: 0
+	+transition-property(height)
+	+transition-duration(0.2s)
+	background-color: $notice-bckg-color
+	overflow-y: auto
+	resize: vertical
+
+	@media (max-width: $mid-breakpoint)
+		width: 45%
+
+	@media (max-width: $mid-breakpoint - 100)
+		width: 40%
+
+	.ewf-toolbars &
+		@media (max-width: $narrow-breakpoint)
+			width: 95%
+			float: none
+			height: $type-tester-height
+			box-shadow: 0 0 0 4px white, 0 0 0 5px $grey-border-color
+			margin: 5px 0 0 5px
+
+	&.active
+		height: $type-tester-height
+		padding: 0.2em 0.3em
+		margin-right: 6px
+		box-shadow: 0 0 0 5px white, 0 0 0 6px $grey-border-color
+		
+.edge-web-fonts
+	width: $total-width
+	margin: 0 auto 1em
+
+#ewf-picker
+	position: relative
+	width: 100%
+
+.ewf-search-fonts
+	display: block
+	width: 40%
+	max-width: 392px
+	min-width: 250px
+	margin: $font-spacing 0
+	padding: 0 0 0 $button-width - 2
+	height: $search-height
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.48)
+	border: $grey-border
+	background-color: $button-bckg-color
+	font-size: 0.85em
+	+transition-property(background-color)
+	+transition-duration(0.2s)
+
+	&:focus
+		background-color: white
+
+.ewf-side-bar
+	position: absolute
+	top: $font-spacing + $search-height
+	left: 0
+
+	@media (max-width: $narrow-breakpoint)
+		top: $font-spacing * 2 + $search-height + $type-tester-height
+
+ul
+	padding: 0
+	margin: 0
+	margin-bottom: $font-spacing
+
+	.ewf-top-bar &
+		+inline-block
+		margin-right: $font-spacing
+	
+		&.font-weights
+			margin-left: $button-width + $font-spacing + 2
+			white-space: nowrap
+			font-family: exo, sans-serif
+
+		&.font-italics
+			display: none
+
+li
+	list-style: none
+	height: 30px
+
+	.ewf-top-bar &
+		+inline-block
+		margin: 0 -5px 0 0
+
+li button
+	display: block
+	position: relative
+	border: $grey-border
+	background: $button-bckg-color
+	width: $button-width + 2
+	height: $button-height + 2
+	padding: 0
+
+	.ewf-top-bar &
+		@media (max-width: $narrow-breakpoint)
+			width: $button-width - 1
+
+	&:hover
+		background-color: darken($button-bckg-color, 7%)
+
+	&.selected
+		background-color: darken($button-bckg-color, 20%)
+
+	&:active
+		box-shadow: 0 0 $button-width / 2 rgba(0, 0, 0, 0.4) inset
+
+	&:disabled,
+	&.disabled
+		div
+			background-position: -$button-width 0
+
+	> div
+		position: absolute
+		top: 0
+		left: 0
+		background-repeat: no-repeat
+
+	.ewf-top-bar &
+		font-size: 22px
+		color: rgb(65, 66, 66)
+		font-family: inherit
+		line-height: $button-height + 2
+		
+		.italics
+			font-style: italic
+		
+		$n: 0
+		@each $weight in $font-weights
+			$n: $n + 1
+			.#{$weight}
+				font-weight: $n * 100
+
+li:first-child button
+	
+	.ewf-side-bar &
+		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.48) inset
+		border-top-left-radius: 3px
+		border-top-right-radius: 3px
+
+	.ewf-top-bar &
+		box-shadow: 1px 0px 0 rgba(255, 255, 255, 0.48) inset
+		border-top-left-radius: 3px
+		border-bottom-left-radius: 3px
+
+li:last-child button
+	
+	.ewf-side-bar &
+		border-bottom-left-radius: 3px
+		border-bottom-right-radius: 3px
+
+	.ewf-top-bar &
+		border-bottom-right-radius: 3px
+		border-top-right-radius: 3px
+
+.ewf-icon
+	padding: 0
+	margin: 0 auto
+	width: 100%
+	height: $button-height
+
+.ewf-icon:disabled
+	background-position: -$button-width 0
+		
+.ewf-results
+	margin-left: $button-width + 2
+	width: 97.5%
+	height: $font-height * 4 + $font-spacing * 3 + 4
+	/* Add top padding for active font style and remove extra padding with negative margin (still need to compensate in height above for padding, however) */
+	padding-top: 4px
+	margin-top: -4px
+	+overflow-scroll
+	font-size: 1%
+
+	@media (min-height: 880px)
+		height: $font-height * 5 + $font-spacing * 4 + 4
+
+	@media (max-height: 740px)
+		height: $font-height * 3 + $font-spacing * 2 + 4
+
+	@media (max-height: 610px)
+		height: $font-height * 2 + $font-spacing * 1 + 4
+
+	.ewf-font
+		+inline-block
+		width: $font-width
+		height: $font-height
+		margin-left: $font-spacing
+		margin-bottom: $font-spacing
+		padding-top: $font-height - 41px
+		background-repeat: no-repeat
+		border: $grey-border
+		background-color: white
+		background-position: 50% -20px
+		cursor: pointer
+		// .01 * 10000 = 100
+		font-size: 10000%
+		overflow: hidden
+		+transition-property(width, padding)
+		+transition-duration(0.3s)
+		
+		&:hover
+			border-color: $accent-color
+			+box-shadow(0 0 3px $accent-color)
+
+		&.active
+			border-color: rgb(0, 185, 0)
+			+box-shadow(0 0 5px rgb(0, 185, 0))
+			//padding-left: $font-width + floor($font-spacing / 2) - 1
+			//padding-right: $font-width + floor($font-spacing / 2) - 1
+
+		#ewf-picker &.non-match
+			+hide-font
+
+		&.error
+			border-color: $grey-border-color
+			+box-shadow(none)
+
+			label
+				color: lighten(black, 40%)
+				+text-shadow(none)
+
+			> .message
+				margin-top: -$font-height
+				width: $font-width
+				height: $font-height
+				background-color: rgba(230, 230, 230, 0.95)
+				+dark-text(black, white)
+
+				dt
+					text-transform: uppercase
+					+adjust-font-size-to(34px)
+					line-height: 1
+					font-family: exo, sans-serif
+					font-weight: 100
+					padding-top: 4px
+
+				dd
+					margin-left: 0
+					font-weight: 700
+					line-height: $base-font-size + 2
+
+	
+	.ewf-font-details
+		display: table
+		height: 39px
+		width: 100%
+		padding: 0 6px
+		background-color: $grey-bckg-color
+		border-top: 1px solid #b4b6b5
+		overflow: hidden
+		cursor: pointer
+	
+		label
+			display: table-cell
+			background-color: transparent
+			vertical-align: middle
+			// 0.8125 * 16 = 13
+			font-size: 0.8125em
+			text-shadow: 0 1px 0 #fff
+			width: auto
+			min-width: $font-width - 14
+			text-align: left
+			line-height: 1.2
+			padding: 0
+			cursor: pointer
+
+.wait
+	top: 250px
+	left: 300px
+
+
+.ewf-search-fonts
+	+image-set("fonts_search", "png")
+	background-repeat: no-repeat
+	background-position: 0 ($search-height - $button-height) / 2
+	
+/**
+ *	Font filters logic (icon images and filtering of results)
+ */
+// Icon images for font recommendations and classifications
+@each $filter in join($font-recommendations, $font-classifications)
+	/* Retina-ized icons for browser interface */
+	.#{$filter}
+		+image-set("fonts_" + $filter, "png")
+
+// Basic font filtering logic
+@each $filter in $font-filters
+	.filter-#{$filter} .ewf-font
+		+hide-font
+
+	.filter-#{$filter} .#{$filter}
+		+show-font
+
+// Add support for a recommendation + classification filter
+@each $recommendation in $font-recommendations
+	
+	@each $classification in $font-classifications
+		.filter-#{$recommendation}.filter-#{$classification} .ewf-font
+			+hide-font
+
+			&.#{$recommendation}.#{$classification}
+				+show-font
+
+// Add support for a weight + recommendation/classification filter
+@each $weight in $font-weights
+	
+	@each $class-rec in join($font-classifications, $font-recommendations)
+		.filter-#{$weight}.filter-#{$class-rec} .ewf-font
+			+hide-font
+
+			&.#{$weight}.#{$class-rec}
+				+show-font
