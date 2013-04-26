@@ -31,6 +31,7 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 	background: rgba($notice-bckg-color, 0.9)
 	border: 1px solid lighten($notice-bckg-color, 5%)
 	border-top: 0
+	+dark-text(black, lighten($notice-bckg-color, 15%))
 
 #font-embed-code
 	position: fixed
@@ -41,6 +42,7 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 	padding: 0 1em
 	overflow: hidden
 	background: $notice-bckg-color
+	+dark-text(black, lighten($notice-bckg-color, 15%))
 	+transition-property(bottom)
 	+transition-duration(0.2s)
 	
@@ -100,11 +102,12 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 	overflow: hidden
 	border: 0
 	padding: 0
-	+transition-property(height)
-	+transition-duration(0.2s)
 	background-color: $notice-bckg-color
+	+dark-text(black, lighten($notice-bckg-color, 15%))
 	overflow-y: auto
 	resize: vertical
+	+transition-property(height)
+	+transition-duration(0.2s)
 
 	@media (max-width: $mid-breakpoint)
 		width: 45%
@@ -319,14 +322,15 @@ li:last-child button
 			+box-shadow(none)
 
 			label
-				color: lighten(black, 40%)
+				color: lighten(black, 60%)
 				+text-shadow(none)
 
 			> .message
 				margin-top: -$font-height
 				width: $font-width
 				height: $font-height
-				background-color: rgba(230, 230, 230, 0.95)
+				padding: 4px 0 0 3px
+				background-color: rgba(230, 230, 230, 0.97)
 				+dark-text(black, white)
 
 				dt
@@ -335,7 +339,6 @@ li:last-child button
 					line-height: 1
 					font-family: exo, sans-serif
 					font-weight: 100
-					padding-top: 4px
 
 				dd
 					margin-left: 0
