@@ -30,6 +30,26 @@ h2
 header > *
 	+text-shadow(0 1px lighten($accent-color, 30%))
 
+a
+	color: darken($accent-color, 15%)
+	text-decoration: none
+	border-bottom: 1px solid $accent-color
+
+a:hover
+	border-bottom-width: 3px
+
+a:visited
+	color: darken($accent-color, 25%)
+	border-bottom-color: darken($accent-color, 25%)
+
+p,
+li,
+dl,
+td
+	a
+		+inline-block
+		height: $base-font-size + 2
+
 .note,
 .note code
 	+adjust-font-size-to(14px)
@@ -41,3 +61,17 @@ header > *
 	@media (max-width: $mid-breakpoint)
 		font-size: 24px
 		line-height: 1.1
+
+footer
+	p
+		+adjust-font-size-to(14px)
+		+rhythm(0.5, 0, 0, 0.5, 14px)
+		+light-text(white, black)
+
+		a
+			color: $accent-color
+			border-bottom-color: $accent-color
+
+		a:visited
+			color: darken($accent-color, 10%)
+			border-bottom-color: darken($accent-color, 10%)

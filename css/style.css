@@ -69,23 +69,78 @@ header > * {
 }
 
 /* line 33, ../sass/_typography.sass */
+a {
+  color: #b27c00;
+  text-decoration: none;
+  border-bottom: 1px solid #feb200;
+}
+
+/* line 38, ../sass/_typography.sass */
+a:hover {
+  border-bottom-width: 3px;
+}
+
+/* line 41, ../sass/_typography.sass */
+a:visited {
+  color: #7f5900;
+  border-bottom-color: #7f5900;
+}
+
+/* line 49, ../sass/_typography.sass */
+p a,
+li a,
+dl a,
+td a {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: top;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  height: 18px;
+}
+
+/* line 53, ../sass/_typography.sass */
 .note,
 .note code {
   font-size: 0.875em;
   line-height: 1.42857em;
 }
 
-/* line 37, ../sass/_typography.sass */
+/* line 57, ../sass/_typography.sass */
 #type-tester {
   font-size: 32px;
   line-height: 1.2;
 }
 @media (max-width: 780px) {
-  /* line 37, ../sass/_typography.sass */
+  /* line 57, ../sass/_typography.sass */
   #type-tester {
     font-size: 24px;
     line-height: 1.1;
   }
+}
+
+/* line 66, ../sass/_typography.sass */
+footer p {
+  font-size: 0.875em;
+  line-height: 1.42857em;
+  margin-top: 0.71429em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 0.71429em;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 0px 1px 1px black;
+}
+/* line 71, ../sass/_typography.sass */
+footer p a {
+  color: #feb200;
+  border-bottom-color: #feb200;
+}
+/* line 75, ../sass/_typography.sass */
+footer p a:visited {
+  color: #cb8e00;
+  border-bottom-color: #cb8e00;
 }
 
 /* line 1, ../sass/_elements.sass */
@@ -112,12 +167,12 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 14, ../sass/_elements.sass */
+/* line 17, ../sass/_elements.sass */
 .preload * {
   font-size: 0;
 }
 
-/* line 17, ../sass/_elements.sass */
+/* line 20, ../sass/_elements.sass */
 header {
   min-height: 60px;
   background-color: #feb200;
@@ -135,20 +190,32 @@ header {
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 2px 2px;
 }
-/* line 44, ../sass/_elements.sass */
+/* line 47, ../sass/_elements.sass */
 header > * {
   width: 95%;
   margin: 0 auto;
 }
 
-/* line 48, ../sass/_elements.sass */
+/* line 51, ../sass/_elements.sass */
+footer {
+  padding: 2px 1.5em;
+  background: #1a1a1a;
+}
+@media (max-width: 600px) {
+  /* line 51, ../sass/_elements.sass */
+  footer {
+    padding: 1px 0.75em;
+  }
+}
+
+/* line 58, ../sass/_elements.sass */
 code {
   display: block;
   padding: 4px;
   margin: 1em 0;
   background-color: rgba(255, 255, 255, 0.5);
 }
-/* line 54, ../sass/_elements.sass */
+/* line 64, ../sass/_elements.sass */
 p code {
   display: inline;
   white-space: nowrap;
