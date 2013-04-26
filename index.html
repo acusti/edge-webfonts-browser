@@ -10,12 +10,36 @@
 	<link rel="stylesheet" href="css/style.css?ver=0.1">
 </head>
 <body>
-	<h1>Adobe Edge Web Font Browser</h1>
-	<h2>Because how else will you find the right font?</h2>
+	<header>
+		<h1>Adobe Edge Web Font Browser</h1>
+		<h2>Helping you find a great free web font</h2>
+	</header>
+	<div id="page-font-notice" class="note">
+		The current page font is “<b class="current-font-name"></b>”
+	</div>
 	<div class="edge-web-fonts">
 		<div id="ewf-picker">
-			<div class="ewf-tabs">
-				<input type="text" placeholder="Search" class="ewf-search-fonts">
+			<div class="ewf-toolbars">
+				<div class="ewf-top-bar">
+					<textarea id="type-tester">Click to edit…</textarea>
+					<input type="text" placeholder="Search" class="ewf-search-fonts">
+					<ul class="font-weights">
+						{{#variations}}
+							<li>
+								<button title="Weight {{localized_name}}00" data-classification="{{class_name}}" class="ewf-classification-button">
+									<div class="ewf-icon {{class_name}}">{{localized_name}}</div>
+								</button>
+							</li>
+						{{/variations}}
+					</ul>
+					<ul class="font-italics">
+						<li>
+							<button title="Include italics for all weights" data-classification="italics" class="ewf-classification-button">
+								<div class="ewf-icon italics">i</div>
+							</button>
+						</li>
+					</ul>
+				</div>
 				<div class="ewf-side-bar">
 					<ul class="recommended-uses">
 						{{#recommendations}}
@@ -39,11 +63,7 @@
 			</div>
 			<div class="ewf-results">
 				{{#families}}
-				<div class="ewf-font 
-					{{#classifications}}{{.}} {{/classifications}}
-					{{#variations}}{{fvd}} {{/variations}}
-					{{#recommended_for}}{{.}} {{/recommended_for}}
-					" data-slug="{{slug}}" style="background-image: url({{thumbnails.edge}})">
+				<div id="{{slug}}" class="ewf-font {{#classifications}}{{.}} {{/classifications}} {{#variations}}{{fvd}} {{/variations}} {{#recommended_for}}{{.}} {{/recommended_for}}" style="background-image: url({{thumbnails.edge}})">
 					<div class="ewf-font-details">
 						<label>{{name}}</label>
 					</div>
@@ -52,8 +72,17 @@
 			</div>
 		</div>
 	</div>
-	<script src="http://code.jquery.com/jquery-2.0.0b1.min.js"></script>
-	<script>window.jQuery || document.write('<script src="js/jquery.min.js?ver=2.0.0b1"><\/script>')</script>
+	<div id="font-embed-code" class="note">
+		<p><strong>To use <span class="font-name">the selected font</span> on your web page, add the following script element to your HTML and use <code class="font-css">font-family: font-slug”</code> in your CSS</strong></p>
+		<code class="include-js"></code>
+		<b class="toggle">Minimize/Maximize</b>
+	</div>
+	<footer>
+		<p>Built by <span itemscope itemtype="http://schema.org/Person"><a href="http://about.me/andrewpatton" itemprop="url">Andrew Patton</a></span> based on code from <a href="https://github.com/adobe/brackets" title="GitHub repository for Brackets">Adobe’s Brackets text editor</a>. If it interests you, <a href="https://github.com/acusti/edge-webfonts-browser">fork the project on GitHub</a> and have your way with it.</p>
+	</footer>
+	<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery.min.js?ver=2.0.0"><\/script>')</script>
 	<script src="js/scripts-ck.js"></script>
+	<script src="//use.edgefonts.net/exo:n1,n2,n3,n4,n5,n6,n7,n8,n9.js"></script>
 </body>
 </html>

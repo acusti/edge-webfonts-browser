@@ -13,9 +13,14 @@ $total-width: 95%
 
 /* Custom variables (imports are first so custom variables can us them) */
 $bckg-color: rgb(225, 225, 225)
+$accent-color: rgb(254, 178, 0)
+$notice-bckg-color: lighten($accent-color, 20%)
+$grey-bckg-color: #e5e8e7
 $grey-border-color: #b4b6b5
 $grey-border: 1px solid $grey-border-color
 $button-bckg-color: #dbddde
+$mid-breakpoint: 780px
+$narrow-breakpoint: 600px
 
 /* =====================
  * Mixins
@@ -34,10 +39,17 @@ $button-bckg-color: #dbddde
 	background-image: image_url("#{$name}.#{$extension}")
 	background-image: -webkit-image-set(image_url("#{$name}.#{$extension}") 1x, image_url("#{$name}@2x.#{$extension}") 2x)
 
+@mixin overflow-scroll($y-only: true)
+	@if $y-only
+		overflow-y: auto
+	@else
+		overflow: auto
+	-webkit-overflow-scrolling: touch
+
 
 /* =====================
  * Import partials
  * ===================== */
 @import "typography"
 @import "elements"
-@import "classes"
+@import "ui"
