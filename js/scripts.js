@@ -31,7 +31,8 @@
 		fonts_by_slug,
 		i,
 		the_family,
-		search_timeout;
+		search_timeout,
+		is_active_page = false;
 
 	// Initialize font variations
 	for (i = 1; i <= 9; i++) {
@@ -261,7 +262,12 @@
 		}, timeout_duration);
 	});
 
-	// Set up results listener
+	// Font embed code toggle handler
+	$('#font-embed-code').find('.toggle').on('click', function() {
+		$('#font-embed-code').toggleClass('hidden');
+	});
+
+	// Set up font list listener
 	$('.ewf-results').on('click', '.ewf-font', function() {
 		var $font = $(this),
 		    slug = this.id,
@@ -277,6 +283,10 @@
 		} else {
 			$.data(this, 'is_activated', true);
 			$.getScript(font_include_url_prefix + slug + font_include_url_suffix, function() {
+				if (!is_active_page) {
+					$('body').addClass('font-active');
+					is_active_page = true;
+				}
 				updateFontEmbed([font]);
 				// Give it some extra milliseconds to avoid FOUT
 				window.setTimeout(function() {

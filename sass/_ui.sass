@@ -28,17 +28,19 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 	top: 0
 	right: 5%
 	padding: 0.5em 1em
-	background: rgba($notice-bckg-color, 0.75)
+	background: rgba($notice-bckg-color, 0.9)
+	border: 1px solid lighten($notice-bckg-color, 5%)
+	border-top: 0
 
 #font-embed-code
 	position: fixed
 	height: 0
 	bottom: -60px
-	left: 15%
-	width: 70%
+	left: 0
+	width: 100%
 	padding: 0 1em
 	overflow: hidden
-	background: rgba($notice-bckg-color, 0.9)
+	background: $notice-bckg-color
 	+transition-property(bottom)
 	+transition-duration(0.2s)
 	
@@ -55,6 +57,40 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 	&.active
 		height: auto
 		bottom: 0
+
+	&.hidden
+		bottom: -40px
+		height: 40px + $base-font-size + 8
+
+		> *
+			display: none
+
+		> .toggle
+			display: block
+			top: 0
+
+	.toggle
+		position: absolute
+		display: block
+		right: 0.5em
+		top: 1em
+		overflow: hidden
+		padding-top: $base-font-size + 2
+		height: 0
+		width: $base-font-size
+		cursor: pointer
+
+		&::after
+			position: absolute
+			content: "﹀"
+			height: $base-font-size - 1
+			width: $base-font-size
+			top: 0
+			left: 0
+			text-align: center
+
+	&.hidden .toggle::after
+		content: "︿"
 
 #type-tester
 	display: block
