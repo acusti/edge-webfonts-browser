@@ -446,7 +446,7 @@ ul {
   display: none;
 }
 
-/* line 142, ../sass/_ui.sass */
+/* line 180, ../sass/_ui.sass */
 li {
   list-style: none;
   height: 30px;
@@ -665,7 +665,45 @@ li button > div {
   margin-left: 0;
   border-width: 0;
 }
-/* line 279, ../sass/_ui.sass */
+/* line 317, ../sass/_ui.sass */
+.ewf-results .ewf-font.error {
+  border-color: #b4b6b5;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 321, ../sass/_ui.sass */
+.ewf-results .ewf-font.error label {
+  color: #666666;
+  text-shadow: none;
+}
+/* line 325, ../sass/_ui.sass */
+.ewf-results .ewf-font.error > .message {
+  margin-top: -121px;
+  width: 111px;
+  height: 121px;
+  background-color: rgba(230, 230, 230, 0.95);
+  color: black;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-shadow: 0px 1px 1px white;
+}
+/* line 332, ../sass/_ui.sass */
+.ewf-results .ewf-font.error > .message dt {
+  text-transform: uppercase;
+  font-size: 2.125em;
+  line-height: 1.17647em;
+  line-height: 1;
+  font-family: exo, sans-serif;
+  font-weight: 100;
+  padding-top: 4px;
+}
+/* line 340, ../sass/_ui.sass */
+.ewf-results .ewf-font.error > .message dd {
+  margin-left: 0;
+  font-weight: 700;
+  line-height: 18px;
+}
+/* line 346, ../sass/_ui.sass */
 .ewf-results .ewf-font-details {
   display: table;
   height: 39px;

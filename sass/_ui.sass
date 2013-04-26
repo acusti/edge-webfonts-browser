@@ -313,6 +313,35 @@ li:last-child button
 
 		#ewf-picker &.non-match
 			+hide-font
+
+		&.error
+			border-color: $grey-border-color
+			+box-shadow(none)
+
+			label
+				color: lighten(black, 40%)
+				+text-shadow(none)
+
+			> .message
+				margin-top: -$font-height
+				width: $font-width
+				height: $font-height
+				background-color: rgba(230, 230, 230, 0.95)
+				+dark-text(black, white)
+
+				dt
+					text-transform: uppercase
+					+adjust-font-size-to(34px)
+					line-height: 1
+					font-family: exo, sans-serif
+					font-weight: 100
+					padding-top: 4px
+
+				dd
+					margin-left: 0
+					font-weight: 700
+					line-height: $base-font-size + 2
+
 	
 	.ewf-font-details
 		display: table
