@@ -714,7 +714,7 @@ li button > div {
   overflow: hidden;
   cursor: pointer;
 }
-/* line 289, ../sass/_ui.sass */
+/* line 356, ../sass/_ui.sass */
 .ewf-results .ewf-font-details label {
   display: table-cell;
   background-color: transparent;
@@ -729,13 +729,13 @@ li button > div {
   cursor: pointer;
 }
 
-/* line 302, ../sass/_ui.sass */
+/* line 370, ../sass/_ui.sass */
 .wait {
   top: 250px;
   left: 300px;
 }
 
-/* line 307, ../sass/_ui.sass */
+/* line 375, ../sass/_ui.sass */
 .ewf-search-fonts {
   background-image: url('../img/fonts_search.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_search.png?1360714058') 1x, url('../img/fonts_search@2x.png?1360714058') 2x);
@@ -747,544 +747,1714 @@ li button > div {
  *	Font filters logic (icon images and filtering of results)
  */
 /* Retina-ized icons for browser interface */
-/* line 318, ../sass/_ui.sass */
+/* line 386, ../sass/_ui.sass */
 .headings {
   background-image: url('../img/fonts_headings.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_headings.png?1360714058') 1x, url('../img/fonts_headings@2x.png?1360714058') 2x);
 }
 
 /* Retina-ized icons for browser interface */
-/* line 318, ../sass/_ui.sass */
+/* line 386, ../sass/_ui.sass */
 .paragraphs {
   background-image: url('../img/fonts_paragraphs.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_paragraphs.png?1360714058') 1x, url('../img/fonts_paragraphs@2x.png?1360714058') 2x);
 }
 
 /* Retina-ized icons for browser interface */
-/* line 318, ../sass/_ui.sass */
+/* line 386, ../sass/_ui.sass */
 .serif {
   background-image: url('../img/fonts_serif.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_serif.png?1360714058') 1x, url('../img/fonts_serif@2x.png?1360714058') 2x);
 }
 
 /* Retina-ized icons for browser interface */
-/* line 318, ../sass/_ui.sass */
+/* line 386, ../sass/_ui.sass */
 .sans-serif {
   background-image: url('../img/fonts_sans-serif.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_sans-serif.png?1360714058') 1x, url('../img/fonts_sans-serif@2x.png?1360714058') 2x);
 }
 
 /* Retina-ized icons for browser interface */
-/* line 318, ../sass/_ui.sass */
+/* line 386, ../sass/_ui.sass */
 .slab-serif {
   background-image: url('../img/fonts_slab-serif.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_slab-serif.png?1360714058') 1x, url('../img/fonts_slab-serif@2x.png?1360714058') 2x);
 }
 
 /* Retina-ized icons for browser interface */
-/* line 318, ../sass/_ui.sass */
+/* line 386, ../sass/_ui.sass */
 .script {
   background-image: url('../img/fonts_script.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_script.png?1360714058') 1x, url('../img/fonts_script@2x.png?1360714058') 2x);
 }
 
 /* Retina-ized icons for browser interface */
-/* line 318, ../sass/_ui.sass */
+/* line 386, ../sass/_ui.sass */
 .blackletter {
   background-image: url('../img/fonts_blackletter.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_blackletter.png?1360714058') 1x, url('../img/fonts_blackletter@2x.png?1360714058') 2x);
 }
 
 /* Retina-ized icons for browser interface */
-/* line 318, ../sass/_ui.sass */
+/* line 386, ../sass/_ui.sass */
 .monospaced {
   background-image: url('../img/fonts_monospaced.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_monospaced.png?1360714058') 1x, url('../img/fonts_monospaced@2x.png?1360714058') 2x);
 }
 
 /* Retina-ized icons for browser interface */
-/* line 318, ../sass/_ui.sass */
+/* line 386, ../sass/_ui.sass */
 .handmade {
   background-image: url('../img/fonts_handmade.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_handmade.png?1360714058') 1x, url('../img/fonts_handmade@2x.png?1360714058') 2x);
 }
 
 /* Retina-ized icons for browser interface */
-/* line 318, ../sass/_ui.sass */
+/* line 386, ../sass/_ui.sass */
 .decorative {
   background-image: url('../img/fonts_decorative.png?1360714058');
   background-image: -webkit-image-set(url('../img/fonts_decorative.png?1360714058') 1x, url('../img/fonts_decorative@2x.png?1360714058') 2x);
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-headings .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-headings .headings {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-paragraphs .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-paragraphs .paragraphs {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-serif .serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-sans-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-sans-serif .sans-serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-slab-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-slab-serif .slab-serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-script .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-script .script {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-blackletter .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-blackletter .blackletter {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-monospaced .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-monospaced .monospaced {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-handmade .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-handmade .handmade {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-decorative .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-decorative .decorative {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-n1 .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-n1 .n1 {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-n2 .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-n2 .n2 {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-n3 .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-n3 .n3 {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-n4 .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-n4 .n4 {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-n5 .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-n5 .n5 {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-n6 .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-n6 .n6 {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-n7 .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-n7 .n7 {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-n8 .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-n8 .n8 {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 323, ../sass/_ui.sass */
+/* line 391, ../sass/_ui.sass */
 .filter-n9 .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
 
-/* line 326, ../sass/_ui.sass */
+/* line 394, ../sass/_ui.sass */
 .filter-n9 .n9 {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-headings.filter-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-headings.filter-serif .ewf-font.headings.serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-headings.filter-sans-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-headings.filter-sans-serif .ewf-font.headings.sans-serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-headings.filter-slab-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-headings.filter-slab-serif .ewf-font.headings.slab-serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-headings.filter-script .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-headings.filter-script .ewf-font.headings.script {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-headings.filter-blackletter .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-headings.filter-blackletter .ewf-font.headings.blackletter {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-headings.filter-monospaced .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-headings.filter-monospaced .ewf-font.headings.monospaced {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-headings.filter-handmade .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-headings.filter-handmade .ewf-font.headings.handmade {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-headings.filter-decorative .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-headings.filter-decorative .ewf-font.headings.decorative {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-paragraphs.filter-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-paragraphs.filter-serif .ewf-font.paragraphs.serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-paragraphs.filter-sans-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-paragraphs.filter-sans-serif .ewf-font.paragraphs.sans-serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-paragraphs.filter-slab-serif .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-paragraphs.filter-slab-serif .ewf-font.paragraphs.slab-serif {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-paragraphs.filter-script .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-paragraphs.filter-script .ewf-font.paragraphs.script {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-paragraphs.filter-blackletter .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-paragraphs.filter-blackletter .ewf-font.paragraphs.blackletter {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-paragraphs.filter-monospaced .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-paragraphs.filter-monospaced .ewf-font.paragraphs.monospaced {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-paragraphs.filter-handmade .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-paragraphs.filter-handmade .ewf-font.paragraphs.handmade {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;
 }
 
-/* line 333, ../sass/_ui.sass */
+/* line 401, ../sass/_ui.sass */
 .filter-paragraphs.filter-decorative .ewf-font {
   width: 0;
   margin-left: 0;
   border-width: 0;
 }
-/* line 336, ../sass/_ui.sass */
+/* line 404, ../sass/_ui.sass */
 .filter-paragraphs.filter-decorative .ewf-font.paragraphs.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n1.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n1.filter-serif .ewf-font.n1.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n1.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n1.filter-sans-serif .ewf-font.n1.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n1.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n1.filter-slab-serif .ewf-font.n1.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n1.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n1.filter-script .ewf-font.n1.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n1.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n1.filter-blackletter .ewf-font.n1.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n1.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n1.filter-monospaced .ewf-font.n1.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n1.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n1.filter-handmade .ewf-font.n1.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n1.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n1.filter-decorative .ewf-font.n1.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n1.filter-headings .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n1.filter-headings .ewf-font.n1.headings {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n1.filter-paragraphs .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n1.filter-paragraphs .ewf-font.n1.paragraphs {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n2.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n2.filter-serif .ewf-font.n2.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n2.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n2.filter-sans-serif .ewf-font.n2.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n2.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n2.filter-slab-serif .ewf-font.n2.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n2.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n2.filter-script .ewf-font.n2.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n2.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n2.filter-blackletter .ewf-font.n2.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n2.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n2.filter-monospaced .ewf-font.n2.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n2.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n2.filter-handmade .ewf-font.n2.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n2.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n2.filter-decorative .ewf-font.n2.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n2.filter-headings .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n2.filter-headings .ewf-font.n2.headings {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n2.filter-paragraphs .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n2.filter-paragraphs .ewf-font.n2.paragraphs {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n3.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n3.filter-serif .ewf-font.n3.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n3.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n3.filter-sans-serif .ewf-font.n3.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n3.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n3.filter-slab-serif .ewf-font.n3.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n3.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n3.filter-script .ewf-font.n3.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n3.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n3.filter-blackletter .ewf-font.n3.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n3.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n3.filter-monospaced .ewf-font.n3.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n3.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n3.filter-handmade .ewf-font.n3.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n3.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n3.filter-decorative .ewf-font.n3.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n3.filter-headings .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n3.filter-headings .ewf-font.n3.headings {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n3.filter-paragraphs .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n3.filter-paragraphs .ewf-font.n3.paragraphs {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n4.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n4.filter-serif .ewf-font.n4.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n4.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n4.filter-sans-serif .ewf-font.n4.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n4.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n4.filter-slab-serif .ewf-font.n4.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n4.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n4.filter-script .ewf-font.n4.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n4.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n4.filter-blackletter .ewf-font.n4.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n4.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n4.filter-monospaced .ewf-font.n4.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n4.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n4.filter-handmade .ewf-font.n4.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n4.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n4.filter-decorative .ewf-font.n4.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n4.filter-headings .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n4.filter-headings .ewf-font.n4.headings {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n4.filter-paragraphs .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n4.filter-paragraphs .ewf-font.n4.paragraphs {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n5.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n5.filter-serif .ewf-font.n5.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n5.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n5.filter-sans-serif .ewf-font.n5.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n5.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n5.filter-slab-serif .ewf-font.n5.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n5.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n5.filter-script .ewf-font.n5.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n5.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n5.filter-blackletter .ewf-font.n5.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n5.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n5.filter-monospaced .ewf-font.n5.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n5.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n5.filter-handmade .ewf-font.n5.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n5.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n5.filter-decorative .ewf-font.n5.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n5.filter-headings .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n5.filter-headings .ewf-font.n5.headings {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n5.filter-paragraphs .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n5.filter-paragraphs .ewf-font.n5.paragraphs {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n6.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n6.filter-serif .ewf-font.n6.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n6.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n6.filter-sans-serif .ewf-font.n6.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n6.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n6.filter-slab-serif .ewf-font.n6.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n6.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n6.filter-script .ewf-font.n6.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n6.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n6.filter-blackletter .ewf-font.n6.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n6.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n6.filter-monospaced .ewf-font.n6.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n6.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n6.filter-handmade .ewf-font.n6.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n6.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n6.filter-decorative .ewf-font.n6.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n6.filter-headings .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n6.filter-headings .ewf-font.n6.headings {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n6.filter-paragraphs .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n6.filter-paragraphs .ewf-font.n6.paragraphs {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n7.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n7.filter-serif .ewf-font.n7.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n7.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n7.filter-sans-serif .ewf-font.n7.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n7.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n7.filter-slab-serif .ewf-font.n7.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n7.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n7.filter-script .ewf-font.n7.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n7.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n7.filter-blackletter .ewf-font.n7.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n7.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n7.filter-monospaced .ewf-font.n7.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n7.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n7.filter-handmade .ewf-font.n7.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n7.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n7.filter-decorative .ewf-font.n7.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n7.filter-headings .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n7.filter-headings .ewf-font.n7.headings {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n7.filter-paragraphs .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n7.filter-paragraphs .ewf-font.n7.paragraphs {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n8.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n8.filter-serif .ewf-font.n8.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n8.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n8.filter-sans-serif .ewf-font.n8.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n8.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n8.filter-slab-serif .ewf-font.n8.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n8.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n8.filter-script .ewf-font.n8.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n8.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n8.filter-blackletter .ewf-font.n8.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n8.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n8.filter-monospaced .ewf-font.n8.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n8.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n8.filter-handmade .ewf-font.n8.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n8.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n8.filter-decorative .ewf-font.n8.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n8.filter-headings .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n8.filter-headings .ewf-font.n8.headings {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n8.filter-paragraphs .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n8.filter-paragraphs .ewf-font.n8.paragraphs {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n9.filter-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n9.filter-serif .ewf-font.n9.serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n9.filter-sans-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n9.filter-sans-serif .ewf-font.n9.sans-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n9.filter-slab-serif .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n9.filter-slab-serif .ewf-font.n9.slab-serif {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n9.filter-script .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n9.filter-script .ewf-font.n9.script {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n9.filter-blackletter .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n9.filter-blackletter .ewf-font.n9.blackletter {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n9.filter-monospaced .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n9.filter-monospaced .ewf-font.n9.monospaced {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n9.filter-handmade .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n9.filter-handmade .ewf-font.n9.handmade {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n9.filter-decorative .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n9.filter-decorative .ewf-font.n9.decorative {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n9.filter-headings .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n9.filter-headings .ewf-font.n9.headings {
+  width: 111px;
+  margin-left: 14px;
+  border-width: 1px;
+}
+
+/* line 411, ../sass/_ui.sass */
+.filter-n9.filter-paragraphs .ewf-font {
+  width: 0;
+  margin-left: 0;
+  border-width: 0;
+}
+/* line 414, ../sass/_ui.sass */
+.filter-n9.filter-paragraphs .ewf-font.n9.paragraphs {
   width: 111px;
   margin-left: 14px;
   border-width: 1px;

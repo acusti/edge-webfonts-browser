@@ -403,3 +403,13 @@ li:last-child button
 
 			&.#{$recommendation}.#{$classification}
 				+show-font
+
+// Add support for a weight + recommendation/classification filter
+@each $weight in $font-weights
+	
+	@each $class-rec in join($font-classifications, $font-recommendations)
+		.filter-#{$weight}.filter-#{$class-rec} .ewf-font
+			+hide-font
+
+			&.#{$weight}.#{$class-rec}
+				+show-font
