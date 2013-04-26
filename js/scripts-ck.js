@@ -710,7 +710,7 @@ jQuery.ajax = (function(_ajax){
 		all_fonts = families.families;
 		all_slugs = [];
 		var i, j;
-		
+
 		// Clean up the fonts in two ways:
 		//   1. give all fonts a locale lowercase name (for searching by name)
 		//   2. make sure all slugs are lowercase (should be the case already)
@@ -718,7 +718,7 @@ jQuery.ajax = (function(_ajax){
 			all_fonts[i].lowerCaseName = all_fonts[i].name.toLocaleLowerCase();
 			all_fonts[i].slug = all_fonts[i].slug.toLowerCase();
 		}
-		
+
 		// We keep all_fonts in alphabetical order by name, so that all other lists will also be in order.
 		all_fonts.sort(function (a, b) {
 			if (a.lowerCaseName < b.lowerCaseName) {
@@ -729,16 +729,16 @@ jQuery.ajax = (function(_ajax){
 				return 0;
 			}
 		});
-		
+
 		// Setup the all_slugs array;
 		for (i = 0; i < all_fonts.length; i++) {
 			all_slugs.push(all_fonts[i].slug);
 		}
-		
+
 		fonts_by_class = {};
 		fonts_by_name = {};
 		fonts_by_slug = {};
-		
+
 		for (i = 0; i < all_fonts.length; i++) {
 			for (j = 0; j < all_fonts[i].classifications.length; j++) {
 				if (!fonts_by_class.hasOwnProperty(all_fonts[i].classifications[j])) {
@@ -752,12 +752,12 @@ jQuery.ajax = (function(_ajax){
 				}
 				fonts_by_class[all_fonts[i].recommended_for[j]].push(all_fonts[i]);
 			}
-			
+
 			fonts_by_name[all_fonts[i].name] = all_fonts[i];
 			fonts_by_slug[all_fonts[i].slug] = all_fonts[i];
 		}
 	};
-	
+
 	// Request font metadata
 	$.ajax({
 		url: api_url_prefix + 'families',
@@ -890,7 +890,7 @@ jQuery.ajax = (function(_ajax){
 					is_active_page = true;
 				}
 				updateFontEmbed([font]);
-				// Give it some extra milliseconds to avoid FOUT
+				// Give it some extra milliseconds to try to avoid FOUT
 				window.setTimeout(function() {
 					$('#type-tester').css('font-family', slug);
 				}, 200);
