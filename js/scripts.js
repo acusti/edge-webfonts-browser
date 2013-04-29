@@ -67,10 +67,13 @@
 		}
 	};
 
-	var createInclude = function(fonts) {
+	var createInclude = function(fonts, src_only) {
 		var i,
 		    font_strings = [],
-		    font_string;
+		    font_string,
+		    font_src;
+
+		src_only = !!src_only;
 
 		for (i = 0; i < fonts.length; i++) {
 			font_string = fonts[i].slug;
@@ -82,7 +85,12 @@
 			}
 			font_strings.push(font_string);
 		}
-		return '<script src="' + font_include_url_prefix + font_strings.join(";") + font_include_url_suffix + '"></script>';
+		font_src = font_include_url_prefix + font_strings.join(";") + font_include_url_suffix;
+
+		if (src_only)
+			return font_src;
+		else
+			return '<script src="' + font_src + '"></script>';
 	};
 
 	/**
@@ -153,6 +161,9 @@
 				font_idx_mod = 1,
 				font_idx,
 				f,
+				f_src,
+				f_includes = [],
+				all_fvds = [],
 				i;
 
 			data = data.responseText.substring(data_start, data_end);
@@ -180,19 +191,22 @@
 			// f = fonts_by_class['headings'][font_idx];
 
 			// To create full script element for including a font (also works with more than one font):
-			// if (f) {
-			// 	for (i = 0; i < f.variations.length; i++) {
-			// 		all_fvds.push(f.variations[i].fvd);
-			// 	}
-			// 	font_includes.push({slug: f.slug, fvds: all_fvds, subset: 'all'});
-			// }
-			// if (font_includes.length) {
-			// 	$picker.prepend(createInclude(font_includes));
-			// }
+			if (f) {
+				for (i = 0; i < f.variations.length; i++) {
+					all_fvds.push(f.variations[i].fvd);
+				}
+				f_includes.push({slug: f.slug, fvds: all_fvds, subset: 'all'});
+			}
+			if (f_includes.length) {
+				//$picker.prepend(createInclude(f_includes));
+				f_src = createInclude(f_includes, true);
+			} else {
+				f_src = font_include_url_prefix + f.slug + font_include_url_suffix;
+			}
 
 			// Load and set page font
 			$page_font_name.html(f.name);
-			$.getScript(font_include_url_prefix + f.slug + font_include_url_suffix, function() {
+			$.getScript(f_src, function() {
 				var $html = $('html').css('fontFamily', f.slug);
 				window.setTimeout(function() {
 					$html.removeClass('preload');
@@ -279,7 +293,7 @@
 					$('#type-tester').css('font-family', slug);
 				}, 200);
 			}).fail(function(jqxhr, settings, exception) {
-				if (jqxhr['status'] === 404) {
+				if (jqxhr.status === 404) {
 					$font.addClass('error 404').append('<dl class="message"><dt>404</dt><dd>Could not load the font. It probably isn’t usable.</dd></dl>');
 				}
 			});
