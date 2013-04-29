@@ -72,27 +72,52 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 			top: 0
 
 	.toggle
-		position: absolute
 		display: block
-		right: 0.5em
-		top: 1em
+		float: right
+		position: relative
+		margin: 0.5em -3px 0 0
 		overflow: hidden
 		padding-top: $base-font-size + 2
 		height: 0
-		width: $base-font-size
 		cursor: pointer
 
 		&::after
-			position: absolute
+			+inline-block
+			margin-top: -0.9em
 			content: "﹀"
-			height: $base-font-size - 1
-			width: $base-font-size
-			top: 0
-			left: 0
 			text-align: center
+			padding: 0 0.17em
 
-	&.hidden .toggle::after
-		content: "︿"
+		&:hover
+			background: rgba(0, 0, 0, 0.15)
+
+		@media (max-width: $full-breakpoint)
+			font-size: $base-font-size + 4
+			padding-top: $base-font-size + 6
+			margin-top: 0.35em
+
+			&::after
+				margin-top: -0.65em
+				padding: 0 0.1em
+
+	&.hidden
+		.toggle
+			margin-top: 0.2em
+			padding-bottom: 0.1em
+
+			&::after
+				content: "︿"
+				margin-top: -1.4em
+				padding-bottom: 0.5em
+
+			&:hover
+				background: rgba(0, 0, 0, 0.15)
+
+			@media (max-width: $full-breakpoint)
+				margin-top: 0.1em
+
+				&::after
+					margin-top: -1.25em
 
 #type-tester
 	display: block
