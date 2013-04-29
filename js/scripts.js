@@ -279,7 +279,7 @@
 					$('#type-tester').css('font-family', slug);
 				}, 200);
 			}).fail(function(jqxhr, settings, exception) {
-				if (jqxhr['status'] === 404) {
+				if (jqxhr.status === 404) {
 					$font.addClass('error 404').append('<dl class="message"><dt>404</dt><dd>Could not load the font. It probably isn’t usable.</dd></dl>');
 				}
 			});
