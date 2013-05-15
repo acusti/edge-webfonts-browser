@@ -1,8 +1,13 @@
 $base-font-size: 16px
 $base-line-height: 20px
+// At the cost of causing some disruptions to vertical rhythm, make sure line-heights do not vary too wildly
+$round-to-nearest-half-line: true
 
 html
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+	@media (max-width: $mid-breakpoint)
+		-webkit-text-size-adjust: none
 
 body
 	+dark-text(black, white)
@@ -10,12 +15,12 @@ body
 +establish-baseline
 // +debug-vertical-alignment
 
+
 h1
 	+adjust-font-size-to(32px)
 
 	@media (max-width: $narrow-breakpoint)
-		font-size: 24px
-		line-height: 1.5
+		+adjust-font-size-to(24px)
 	
 h2
 	+adjust-font-size-to(28px)

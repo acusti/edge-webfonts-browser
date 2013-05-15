@@ -33,6 +33,12 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 	border-top: 0
 	+dark-text(black, lighten($notice-bckg-color, 15%))
 
+	@media (max-width: $narrow-breakpoint)
+		right: auto
+		width: 100%
+		padding: 0.1em 0
+		text-align: center
+
 #font-embed-code
 	position: fixed
 	height: 0
@@ -67,10 +73,6 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 		> *
 			display: none
 
-		> .toggle
-			display: block
-			top: 0
-
 	.toggle
 		display: block
 		float: right
@@ -102,7 +104,7 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 
 	&.hidden
 		.toggle
-			margin-top: 0.2em
+			margin-top: 0.1em
 			padding-bottom: 0.1em
 
 			&::after
@@ -114,7 +116,7 @@ $font-filters: join(join($font-recommendations, $font-classifications), $font-we
 				background: rgba(0, 0, 0, 0.15)
 
 			@media (max-width: $full-breakpoint)
-				margin-top: 0.1em
+				margin-top: 0em
 
 				&::after
 					margin-top: -1.25em
@@ -294,7 +296,6 @@ li:last-child button
 		
 .ewf-results
 	margin-left: $button-width + 2
-	width: 97.5%
 	height: $font-height * 4 + $font-spacing * 3 + 4
 	/* Add top padding for active font style and remove extra padding with negative margin (still need to compensate in height above for padding, however) */
 	padding-top: 4px
