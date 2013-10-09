@@ -614,6 +614,8 @@ jQuery.ajax = (function(_ajax){
      Begin scripts.js
 ********************************************** */
 
+/*global jQuery, Mustache */
+
 (function($) {
 	var api_url_prefix     = 'https://edgewebfonts.adobe.com/data/',
 		font_include_url_prefix = '//use.edgefonts.net/',
@@ -624,22 +626,22 @@ jQuery.ajax = (function(_ajax){
 		$results             = $picker.find('.ewf-results'),
 		$page_font_name      = $('#page-font-notice').find('.current-font-name'),
 		font_classifications = [
-			{ class_name: 'serif',	   localized_name: 'Serif' },
+			{ class_name: 'serif',       localized_name: 'Serif' },
 			{ class_name: 'sans-serif',  localized_name: 'Sans-Serif' },
 			{ class_name: 'slab-serif',  localized_name: 'Slab-Serif' },
-			{ class_name: 'script',	  localized_name: 'Script' },
+			{ class_name: 'script',      localized_name: 'Script' },
 			{ class_name: 'blackletter', localized_name: 'Blackletter' },
 			{ class_name: 'monospaced',  localized_name: 'Monospaced' },
-			{ class_name: 'handmade',	localized_name: 'Handmade' },
+			{ class_name: 'handmade',    localized_name: 'Handmade' },
 			{ class_name: 'decorative',  localized_name: 'Decorative' }
 		],
 		font_recommendations = [
-			 { class_name: 'headings',	localized_name: 'Headings' },
-			 { class_name: 'paragraphs',  localized_name: 'Paragraphs' }
+			{ class_name: 'headings',   localized_name: 'Headings' },
+			{ class_name: 'paragraphs', localized_name: 'Paragraphs' }
 		],
 		font_variations = [],
 		font_families_map = [],
-		font_filters = font_classifications.concat(font_recommendations),
+		// font_filters = font_classifications.concat(font_recommendations),
 		all_fonts,
 		all_slugs,
 		fonts_by_class,
@@ -658,23 +660,23 @@ jQuery.ajax = (function(_ajax){
 
 	// Initialize font_classifications to font_families map
 	for (i = 0; i < font_classifications.length; i++) {
-		if (font_classifications[i].class_name === 'serif' || font_classifications[i].class_name === 'slab-serif')
+		if (font_classifications[i].class_name === 'serif' || font_classifications[i].class_name === 'slab-serif') {
 			the_family = 'serif';
-		else if (font_classifications[i].class_name === 'sans-serif')
+		} else if (font_classifications[i].class_name === 'sans-serif') {
 			the_family = 'sans-serif';
-		else if (font_classifications[i].class_name === 'script' || font_classifications[i].class_name === 'handmade')
+		} else if (font_classifications[i].class_name === 'script' || font_classifications[i].class_name === 'handmade') {
 			the_family = 'cursive';
-		else if (font_classifications[i].class_name === 'monospaced')
+		} else if (font_classifications[i].class_name === 'monospaced') {
 			the_family = 'monospace';
-		else
+		} else {
 			the_family = 'decorative';
-
+		}
 		font_families_map[font_classifications[i].class_name] = the_family;
 	}
 
 	var updateFontEmbed = function(fonts) {
 		var $font_embed = $('#font-embed-code').addClass('active'),
-		    i;
+			i;
 
 		for (i = 0; i < fonts.length; i++) {
 			$font_embed.find('.include-js').html('&lt;script src="' + font_include_url_prefix + fonts[i].slug + font_include_url_suffix + '"&gt;&lt;/script&gt;');
@@ -685,9 +687,9 @@ jQuery.ajax = (function(_ajax){
 
 	var createInclude = function(fonts, src_only) {
 		var i,
-		    font_strings = [],
-		    font_string,
-		    font_src;
+			font_strings = [],
+			font_string,
+			font_src;
 
 		src_only = !!src_only;
 
@@ -846,7 +848,7 @@ jQuery.ajax = (function(_ajax){
 	// Add button handlers
 	$('.ewf-classification-button').on('click', function() {
 		var $button = $(this),
-		    filter = $button.data('classification');
+			filter = $button.data('classification');
 
 		// Deselect any other selected buttons in the same 'group' (ul)
 		$button.closest('li').siblings().find('.selected').trigger('click');
@@ -855,8 +857,8 @@ jQuery.ajax = (function(_ajax){
 	});
 	$('.ewf-search-fonts').on('keyup submit', function(evt) {
 		var $search = $(this),
-		    key = evt.keyCode,
-		    timeout_duration = 500;
+			key = evt.keyCode,
+			timeout_duration = 500;
 
 		// If the enter / return key was pressed
 		if (key && key === 13)
@@ -867,7 +869,7 @@ jQuery.ajax = (function(_ajax){
 
 		search_timeout = window.setTimeout(function() {
 			var name,
-			    search_string = $search.val().toLowerCase();
+				search_string = $search.val().toLowerCase();
 			// Reset font matches
 			$('.non-match').removeClass('non-match');
 			// Identify non-matches
@@ -886,9 +888,9 @@ jQuery.ajax = (function(_ajax){
 	// Set up font list listener
 	$('.ewf-results').on('click', '.ewf-font', function() {
 		var $font = $(this),
-		    slug = this.id,
-		    font = fonts_by_slug[slug],
-		    is_activated = $.data(this, 'is_activated');
+			slug = this.id,
+			font = fonts_by_slug[slug],
+			is_activated = $.data(this, 'is_activated');
 
 		$font.siblings('.active').removeClass('active');
 		$font.addClass('active');
@@ -908,7 +910,7 @@ jQuery.ajax = (function(_ajax){
 				window.setTimeout(function() {
 					$('#type-tester').css('font-family', slug);
 				}, 200);
-			}).fail(function(jqxhr, settings, exception) {
+			}).fail(function(jqxhr/*, settings, exception*/) {
 				if (jqxhr.status === 404) {
 					$font.addClass('error 404').append('<dl class="message"><dt>404</dt><dd>Could not load the font. It probably isn’t usable.</dd></dl>');
 				}

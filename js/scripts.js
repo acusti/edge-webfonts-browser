@@ -1,3 +1,5 @@
+/*global jQuery, Mustache */
+
 (function($) {
 	var api_url_prefix     = 'https://edgewebfonts.adobe.com/data/',
 		font_include_url_prefix = '//use.edgefonts.net/',
@@ -23,7 +25,7 @@
 		],
 		font_variations = [],
 		font_families_map = [],
-		font_filters = font_classifications.concat(font_recommendations),
+		// font_filters = font_classifications.concat(font_recommendations),
 		all_fonts,
 		all_slugs,
 		fonts_by_class,
@@ -230,7 +232,7 @@
 	// Add button handlers
 	$('.ewf-classification-button').on('click', function() {
 		var $button = $(this),
-		    filter = $button.data('classification');
+			filter = $button.data('classification');
 
 		// Deselect any other selected buttons in the same 'group' (ul)
 		$button.closest('li').siblings().find('.selected').trigger('click');
@@ -239,8 +241,8 @@
 	});
 	$('.ewf-search-fonts').on('keyup submit', function(evt) {
 		var $search = $(this),
-		    key = evt.keyCode,
-		    timeout_duration = 500;
+			key = evt.keyCode,
+			timeout_duration = 500;
 
 		// If the enter / return key was pressed
 		if (key && key === 13)
@@ -251,7 +253,7 @@
 
 		search_timeout = window.setTimeout(function() {
 			var name,
-			    search_string = $search.val().toLowerCase();
+				search_string = $search.val().toLowerCase();
 			// Reset font matches
 			$('.non-match').removeClass('non-match');
 			// Identify non-matches
@@ -270,9 +272,9 @@
 	// Set up font list listener
 	$('.ewf-results').on('click', '.ewf-font', function() {
 		var $font = $(this),
-		    slug = this.id,
-		    font = fonts_by_slug[slug],
-		    is_activated = $.data(this, 'is_activated');
+			slug = this.id,
+			font = fonts_by_slug[slug],
+			is_activated = $.data(this, 'is_activated');
 
 		$font.siblings('.active').removeClass('active');
 		$font.addClass('active');
@@ -292,7 +294,7 @@
 				window.setTimeout(function() {
 					$('#type-tester').css('font-family', slug);
 				}, 200);
-			}).fail(function(jqxhr, settings, exception) {
+			}).fail(function(jqxhr/*, settings, exception*/) {
 				if (jqxhr.status === 404) {
 					$font.addClass('error 404').append('<dl class="message"><dt>404</dt><dd>Could not load the font. It probably isn’t usable.</dd></dl>');
 				}
