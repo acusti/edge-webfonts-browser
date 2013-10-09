@@ -615,7 +615,7 @@ jQuery.ajax = (function(_ajax){
 ********************************************** */
 
 (function($) {
-	var api_url_prefix     = 'https://api.typekit.com/edge_internal_v1/',
+	var api_url_prefix     = 'https://edgewebfonts.adobe.com/data/',
 		font_include_url_prefix = '//use.edgefonts.net/',
 		font_include_url_suffix = '.js',
 		d                    = $.Deferred(),
@@ -768,7 +768,7 @@ jQuery.ajax = (function(_ajax){
 
 	// Request font metadata
 	$.ajax({
-		url: api_url_prefix + 'families',
+		url: api_url_prefix + 'fontData.json',
 		type: 'GET',
 		success: function (data) {
 			// Using cross-domain-ajax jQuery plugin, which means data.responseText is an XML document
